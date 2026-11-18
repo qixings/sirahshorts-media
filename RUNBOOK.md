@@ -277,8 +277,9 @@ toward YouTube monetization, so every Sunday we join finished Shorts into one 16
    one or two sentence summary; blank line; the chapters from chapters.txt (first one must be 0:00); blank line;
    "📖 Surah <refs of every part>"; "Out of respect, no Prophet or person is shown; Prophet <Name> (AS) appears as a
    glowing light."; "Watch the parts as Shorts in the Prophet <Name> playlist."; 3 hashtags.
-   Then YOUTUBE_ADD_VIDEO_TO_PLAYLIST with the prophet's playlist. If Composio has a YouTube thumbnail tool, set the
-   thumb.jpg as the thumbnail; if it fails (the channel may need phone verification), just note it, not an alert.
+   Then YOUTUBE_ADD_VIDEO_TO_PLAYLIST with the prophet's playlist, then YOUTUBE_UPDATE_THUMBNAIL with videoId and
+   thumbnailUrl = the raw GitHub URL of `long/<name>.mp4.thumb.jpg` (the channel is phone-verified since 18 Nov 2026).
+   If the thumbnail fails, note it in the report, not an alert.
 5. Facebook: if the film is 3 minutes or longer, also post it on the Page as a normal video (not a Reel) with the
    same title and description, published now. A failure here is one line in the report, not an alert.
 6. Add to `state.long_videos`: {kind, prophet, parts [n...], title, file, duration, yt_video_id, fb_video_id, date}.
