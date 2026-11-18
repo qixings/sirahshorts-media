@@ -193,7 +193,8 @@ Write `paint_<slug>.py` modeled on `engine/examples/part3/paint3.py` (and part2)
 frame, scene boundaries at line starts, crossfades, the title card on scene 1
 ("STORIES OF THE PROPHETS" / "PROPHET <NAME> · PART <N>"), a small verse label pill per scene (`label()`), and the
 "PART <N+1> · FOLLOW" end card on the last scene placed at y 900 to 1420 so captions at y 662 do not cover it.
-Keep the house style: warm painted gradients, parallax, slow camera push, glowing oval light for the prophet, gold
+Brand: the logo files in `engine/core/brand/` are the only logo; use them wherever a brand mark is needed
+(long video cards, thumbnails, specials). Keep the house style: warm painted gradients, parallax, slow camera push, glowing oval light for the prophet, gold
 (222,182,96) accents, Bebas Neue (`TF_COND`) and Montserrat (`TF_SANS`). New helper drawings (mountain, sea, staff,
 serpent as a simple curved shape, palace, boat) are fine; keep them simple and readable.
 
@@ -204,8 +205,11 @@ Fix and probe again. Then:
 python3 paint_<slug>.py --out out/paint.mp4
 ffmpeg -v error -y -i audio/narration.m4a -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 audio/voice.m4a
 CAPTION_Y=0.345 python3 $T/burn_captions.py --project "$PWD" --video out/paint.mp4 --audio audio/voice.m4a --style highlighter --out out/cap.mp4 --workers 2 --crf 18
-ffmpeg -v error -y -i out/cap.mp4 -c:v libx264 -preset slow -crf 27 -tune grain -pix_fmt yuv420p -c:a copy -movflags +faststart ../../videos/<slug>.mp4
+python3 $T/brand_logo.py out/cap.mp4 ../../videos/<slug>.mp4
 ```
+`brand_logo.py` stamps the Sirah Shorts logo (`engine/core/brand/logo-transparent.png`, Rony's official logo since
+19 Nov 2026) above the end card for the last 2.2 seconds and does the final compression. Never draw the logo yourself
+or change it; always use that file. Check the last-second still: the logo must not cover the "PART <N+1>" text.
 Check the final file with ffprobe: has video and audio, 30 to 75 seconds, under 95 MB. Grab 4 stills from it and look.
 
 ## Step 8. Publish the files

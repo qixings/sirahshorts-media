@@ -49,9 +49,16 @@ def background():
     return Image.blend(img, glow.filter(ImageFilter.GaussianBlur(220)), 0.9)
 
 
+LOGO = os.path.join(FONTS, "..", "brand", "logo-transparent.png")
+
+
+def paste_logo(img, size, cx, cy):
+    lg = Image.open(LOGO).convert("RGBA").resize((size, size), Image.LANCZOS)
+    img.paste(lg, (int(cx - size / 2), int(cy - size / 2)), lg)
+
+
 def title_card(path, prophet, title, sub):
-    img = background(); d = ImageDraw.Draw(img)
-    centred(d, 300, "SIRAH SHORTS", font("cond.ttf", 54), DIM)
+    img = background(); paste_logo(img, 300, W / 2, 210); d = ImageDraw.Draw(img)
     centred(d, 390, f"Prophet {prophet} (AS)", font("Cinzel.ttf", 118), GOLD)
     y = 560
     for ln in wrap(d, title, font("Cinzel.ttf", 64), 1500):
@@ -61,8 +68,7 @@ def title_card(path, prophet, title, sub):
 
 
 def end_card(path, prophet, next_line):
-    img = background(); d = ImageDraw.Draw(img)
-    centred(d, 380, "Sirah Shorts", font("GreatVibes-Regular.ttf", 150), GOLD)
+    img = background(); paste_logo(img, 460, W / 2, 330); d = ImageDraw.Draw(img)
     centred(d, 600, next_line, font("cond.ttf", 60), CREAM)
     centred(d, 690, "Subscribe for the next part of the story", font("cond.ttf", 44), DIM)
     img.save(path)

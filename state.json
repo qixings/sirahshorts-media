@@ -340,5 +340,10 @@
         "added": "2026-11-19"
       }
     ]
+  },
+  "brand": {
+    "logo": "engine/core/brand/logo.png",
+    "logo_transparent": "engine/core/brand/logo-transparent.png",
+    "since": "2026-11-19"
   }
 }
