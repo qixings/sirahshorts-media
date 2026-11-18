@@ -52,7 +52,8 @@
       "ig_media_id": "18658667887032286",
       "ig_permalink": "https://www.instagram.com/reel/Df4LClWn-t4/",
       "fb_video_id": "2633000833832113",
-      "voice": "Grandfather Joe (manual)"
+      "voice": "Grandfather Joe (manual)",
+      "yt_video_id": "2Yx_4k1l7Uw"
     },
     {
       "n": 2,
@@ -66,7 +67,8 @@
       "status": "scheduled",
       "fb_video_id": "3064721327225915",
       "ig_trigger": "trig_01C977M4TrrgREPWjP1XYqLt",
-      "voice": "Gregory Grumble (manual)"
+      "voice": "Gregory Grumble (manual)",
+      "yt": "uploaded by the ig_trigger task at post time"
     },
     {
       "n": 3,
@@ -80,7 +82,8 @@
       "status": "scheduled",
       "fb_video_id": "1132944976144734",
       "ig_trigger": "trig_0111bsNzuwCve64J34rz5G9K",
-      "voice": "Gregory Grumble (manual)"
+      "voice": "Gregory Grumble (manual)",
+      "yt": "uploaded by the ig_trigger task at post time"
     }
   ],
   "plan": [
@@ -221,5 +224,14 @@
   "stats": [],
   "paused": false,
   "instructions_log": [],
-  "report_style": "short: 2 to 4 lines, no explanations"
+  "report_style": "short: 2 to 4 lines, no explanations",
+  "youtube": {
+    "composio_account": "youtube_clam-adrip",
+    "channel_id": "UCe2djP0rJiyloWiGInBmkIQ",
+    "handle": "@sirah.shorts",
+    "category_id": "27",
+    "playlists": {
+      "Musa": "PLZ_eT7sWEYTQ"
+    }
+  }
 }

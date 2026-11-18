@@ -1,6 +1,6 @@
 # Sirah Shorts daily runbook
 
-This repo is the home of the @sirahshorts Instagram account and the "Sirah Shorts" Facebook Page: short vertical videos
+This repo is the home of the @sirahshorts Instagram account, the "Sirah Shorts" Facebook Page and the YouTube channel @sirah.shorts: short vertical videos
 telling the stories of the prophets from the Qur'an. A scheduled task runs this runbook once a day, unattended.
 The owner (Rony) only reads Telegram updates. Follow every step in order. Never ask questions; when something needs him,
 send a Telegram alert that starts with 🚨 and says exactly what to do, then stop.
@@ -50,7 +50,7 @@ and pass the `account` ids from `state.json` when executing tools.
 
 ## Step 1. Health check
 
-COMPOSIO_MANAGE_CONNECTIONS action "list" for instagram, facebook, telegram, elevenlabs, github. If any is not active,
+COMPOSIO_MANAGE_CONNECTIONS action "list" for instagram, facebook, youtube, telegram, elevenlabs, github. If any is not active,
 send a 🚨 Telegram alert naming the service and saying "open Claude, ask it to reconnect <service>", then stop.
 
 ## Step 1b. Read Rony's Telegram messages
@@ -68,7 +68,8 @@ Acknowledge what you did with one short line in the report (for example "Done: p
 
 - For every episode with status "scheduled" whose date and time have passed: confirm it is live.
   Instagram: INSTAGRAM_GET_IG_USER_MEDIA (ig_user_id "me", limit 10), match by caption opening. Facebook:
-  FACEBOOK_LIST_PAGE_REELS. Mark "posted" and store ig_media_id, ig_permalink. If a post is missing more than 2 hours
+  FACEBOOK_LIST_PAGE_REELS. YouTube: YOUTUBE_LIST_CHANNEL_VIDEOS (mine true); store yt_video_id. Add YouTube views and
+  subscribers (YOUTUBE_GET_CHANNEL_STATISTICS) to the stats row. Mark "posted" and store ig_media_id, ig_permalink. If a post is missing more than 2 hours
   after its time, send a 🚨 alert with the episode name and which platform failed.
 - For each posted Reel from the last 14 days, read INSTAGRAM_GET_IG_MEDIA_INSIGHTS (views, reach, likes, comments,
   shares, saved) and append a dated row to `state.stats`. Missing metrics are "unavailable", not zero.
@@ -172,17 +173,27 @@ For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profi
 
 - Facebook: FACEBOOK_PUBLISH_PAGE_REEL with page_id, file_url = raw URL, video_state "SCHEDULED",
   scheduled_publish_time = Unix time of the target date and time (IST is UTC+5:30), is_ai_generated false.
-- Instagram: create a one-time scheduled task (create_trigger, run_once_at "<date>T<time>:00[Asia/Calcutta]",
+- YouTube is posted by the same one-time task as Instagram (YouTube has no scheduling tool here), see below.
+- Instagram + YouTube: create a one-time scheduled task (create_trigger, run_once_at "<date>T<time>:00[Asia/Calcutta]",
   initiation "human_schedule", notifications push) whose prompt publishes the Reel: Composio
   INSTAGRAM_POST_IG_USER_MEDIA (ig_user_id "me", media_type REELS, share_to_feed true, thumb_offset 2500, video_url,
   exact caption), then INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH (max_wait_seconds 240), verify with INSTAGRAM_GET_IG_MEDIA,
   skip if a Reel with the same caption opening already exists, then send a Telegram message to chat 8722468322:
-  "✅ Live on Instagram: <title> <permalink>" or a 🚨 alert on failure. Copy the wording of the Part 2 task in
-  state.json's ig_trigger if useful.
+  "✅ <title> live: IG <permalink> · YT https://youtube.com/shorts/<id>" or a 🚨 alert on failure.
+  The same task also uploads to YouTube (account youtube_clam-adrip): in COMPOSIO_REMOTE_WORKBENCH skip if a video
+  with the same title opening exists (YOUTUBE_LIST_CHANNEL_VIDEOS mine true), else download the raw video URL,
+  upload_local_file() to get an s3key, YOUTUBE_MULTIPART_UPLOAD_VIDEO with title
+  "Prophet <Name> (AS) Part <N>: <Title> <emoji> #Shorts" (max 100 chars), categoryId "27", privacyStatus "public",
+  8 to 10 search tags, and the caption as description with "#Shorts" first among the hashtags, a line "Out of respect,
+  no Prophet or person is shown; Prophet <Name> (AS) appears as a glowing light." and "Watch from Part 1 in the
+  Prophet <Name> playlist." Then YOUTUBE_ADD_VIDEO_TO_PLAYLIST with the prophet's playlist from
+  state.youtube.playlists; when a new prophet starts, create the playlist first (YOUTUBE_CREATE_PLAYLIST, public,
+  title "Prophet <Name> (AS) | Full Story in Parts") and save its id in state.json.
+  Copy the structure of the Part 2 task (trigger trig_01C977M4TrrgREPWjP1XYqLt) for the prompt.
 
 ## Step 10. Save state and report
 
-Move the plan item into `episodes` with date, time, status "scheduled", fb_video_id, ig_trigger, refs, video path.
+Move the plan item into `episodes` with date, time, status "scheduled", fb_video_id, ig_trigger (it also does YouTube), refs, video path.
 When the plan has 5 or fewer items left, append the next parts for the next prophet in the same style (Ibrahim, Yunus,
 Sulaiman, Isa, then Muhammad ﷺ, whose Sirah gives the account its name) and say so in the report.
 Commit and push state.json.
