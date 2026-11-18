@@ -1,0 +1,4 @@
+episodes/*/out/
+episodes/*/audio/
+episodes/*/fonts/
+__pycache__/

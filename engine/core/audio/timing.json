@@ -1,0 +1,71 @@
+{
+  "total_duration": 31.842,
+  "lead_in": 0.4,
+  "tail_out": 1.6,
+  "tempo": 1.0,
+  "segments": [
+    {
+      "id": 1,
+      "scene": "T01_all",
+      "caption": "Pharaoh ordered every newborn boy of Bani Israel killed.",
+      "vo": "Pharaoh ordered every newborn boy of Bani Israel killed.",
+      "start": 0.4,
+      "end": 4.753,
+      "duration": 4.353
+    },
+    {
+      "id": 2,
+      "scene": "T01_all",
+      "caption": "But Allah told one mother: nurse him, then cast him into the river.",
+      "vo": "But Allah told one mother: nurse him, then cast him into the river.",
+      "start": 5.053,
+      "end": 10.01,
+      "duration": 4.957
+    },
+    {
+      "id": 3,
+      "scene": "T01_all",
+      "caption": "The river carried him straight to Pharaoh's palace.",
+      "vo": "The river carried him straight to Pharaoh's palace.",
+      "start": 10.31,
+      "end": 13.123,
+      "duration": 2.813
+    },
+    {
+      "id": 4,
+      "scene": "T01_all",
+      "caption": "Pharaoh's wife, Asiya, said: do not kill him.",
+      "vo": "Pharaoh's wife, Aasiya, said: do not kill him.",
+      "start": 13.423,
+      "end": 16.709,
+      "duration": 3.286
+    },
+    {
+      "id": 5,
+      "scene": "T01_all",
+      "caption": "He refused every nurse, until his sister led them to his own mother.",
+      "vo": "He refused every nurse, until his sister led them to his own mother.",
+      "start": 17.009,
+      "end": 21.5,
+      "duration": 4.491
+    },
+    {
+      "id": 6,
+      "scene": "T01_all",
+      "caption": "Allah's promise came true. He was back in her arms.",
+      "vo": "Allah's promise came true. He was back in her arms.",
+      "start": 21.8,
+      "end": 25.486,
+      "duration": 3.685
+    },
+    {
+      "id": 7,
+      "scene": "T01_all",
+      "caption": "But the palace would not hold him forever. Follow for Part 2.",
+      "vo": "But the palace would not hold him forever. Follow for Part two.",
+      "start": 25.986,
+      "end": 30.242,
+      "duration": 4.256
+    }
+  ]
+}

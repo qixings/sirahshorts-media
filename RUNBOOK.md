@@ -1,0 +1,173 @@
+# Sirah Shorts daily runbook
+
+This repo is the home of the @sirahshorts Instagram account and the "Sirah Shorts" Facebook Page: short vertical videos
+telling the stories of the prophets from the Qur'an. A scheduled task runs this runbook once a day, unattended.
+The owner (Rony) only reads Telegram updates. Follow every step in order. Never ask questions; when something needs him,
+send a Telegram alert that starts with 🚨 and says exactly what to do, then stop.
+
+Everything about the accounts, the voice, the posting time, past episodes and the content plan lives in `state.json`.
+Update it and push it at the end of every run.
+
+## Hard content rules (never break these)
+
+1. **No depiction of any prophet or any person.** A prophet is shown only as the glowing oval of light (`light()` in
+   `engine/core/paint.py`). Other people are never drawn: show them through objects (sheep, staffs, a tent, footprints,
+   lamps, a doorway). No faces, no silhouettes of people, no AI images of people.
+2. **Facts come from the Qur'an.** Every line must be supported by the verses in the episode's refs. Before writing,
+   fetch the verses in English (for example `https://quran.com/<surah>/<from>-<to>` with WebFetch) and check each line
+   against them. Names or details that come only from tafsir or hadith (for example Asiya, Shu'ayb, the Nile) are allowed
+   only if phrased so the narration does not claim the Qur'an says them, and you note them in `fact_notes`.
+   If a verse is unclear or scholars differ, leave the detail out.
+3. Respectful wording: "Allah", "Prophet Musa (AS)" in captions; never comedic; keep sensitive passages (Yusuf 12:23-29,
+   Al-Kahf 18:74) modest and non-graphic.
+4. No music. No sound effects. Voice only.
+5. No em dashes between words in captions or on-screen text; use commas.
+
+## Step 0. Set up
+
+```bash
+cd ~ && git clone --depth 1 https://github.com/qixings/sirahshorts-media && cd sirahshorts-media
+pip install skia-python numpy pillow scipy --break-system-packages -q
+which ffmpeg ffprobe   # if missing: apt-get install -y ffmpeg
+```
+Use Composio for every external service. Start each Composio workflow with COMPOSIO_SEARCH_TOOLS (session generate_id true)
+and pass the `account` ids from `state.json` when executing tools.
+
+## Step 1. Health check
+
+COMPOSIO_MANAGE_CONNECTIONS action "list" for instagram, facebook, telegram, elevenlabs, github. If any is not active,
+send a 🚨 Telegram alert naming the service and saying "open Claude, ask it to reconnect <service>", then stop.
+
+## Step 2. Check yesterday and collect stats
+
+- For every episode with status "scheduled" whose date and time have passed: confirm it is live.
+  Instagram: INSTAGRAM_GET_IG_USER_MEDIA (ig_user_id "me", limit 10), match by caption opening. Facebook:
+  FACEBOOK_LIST_PAGE_REELS. Mark "posted" and store ig_media_id, ig_permalink. If a post is missing more than 2 hours
+  after its time, send a 🚨 alert with the episode name and which platform failed.
+- For each posted Reel from the last 14 days, read INSTAGRAM_GET_IG_MEDIA_INSIGHTS (views, reach, likes, comments,
+  shares, saved) and append a dated row to `state.stats`. Missing metrics are "unavailable", not zero.
+- INSTAGRAM_GET_USER_INFO for followers_count. Once followers are 100 or more, also read INSTAGRAM_GET_USER_INSIGHTS
+  metric online_followers (period lifetime) for the last 7 days.
+
+## Step 3. Decide whether to make a video today
+
+Today and times are in IST. Count episodes with status "scheduled" and a future date. If that count is
+`posting.max_future_scheduled` (2) or more, skip to Step 10 and send only a short daily report.
+Otherwise the target date is the earliest date, starting tomorrow, that has no episode. (Never schedule for today.)
+
+## Step 4. Choose the posting time
+
+- Fewer than 100 followers and fewer than 7 posted Reels: keep `posting.current_time_ist` (20:00).
+- 7 or more posted Reels: compare average views in the first 24 hours by posting hour. Every 4th episode, test one
+  slot (alternate 13:00, 18:00, 21:30 IST). Keep the winner as current_time_ist once it beats the current time over at
+  least 2 posts each.
+- 100+ followers with online_followers data: pick the IST hour with the most followers online on average and post
+  30 minutes before it, rounded to :00 or :30, unless the views data clearly disagrees.
+- Log every change in `posting.time_decision_log` with the reason. Mention a change in the Telegram update.
+
+## Step 5. Write the episode
+
+Take the first item in `state.plan`. Fetch and read its verses (rule 2). Write `episodes/<slug>/script.json` in the same
+format as `engine/examples/part3/script.json`: one take "T01_all", lines with `text`, `spoken`, `gap_after`.
+- 45 to 60 seconds: about 110 to 140 words, 9 to 13 lines, 4 to 18 words each.
+- Line 1 is a hook. The last line is a cliffhanger that ends "Follow for Part <next>." (or the next prophet's name when a
+  series ends).
+- `spoken`: numbers as words; write names phonetically if needed (Mad-yan, Toor, Haaroon).
+- Slug: `<prophet>-part<N>`, lower case, for example `musa-part4`.
+
+## Step 6. Record the voice (ElevenLabs via Composio, then GitHub)
+
+Join the `spoken` lines with a blank line between them. In COMPOSIO_REMOTE_WORKBENCH:
+```python
+import base64, requests
+res, err = run_composio_tool("ELEVENLABS_TEXT_TO_SPEECH", {"voice_id": VOICE_ID, "text": TEXT, "model_id": "eleven_multilingual_v2",
+    "voice_settings": {"stability": 0.55, "similarity_boost": 0.75, "style": 0.0}}, account=ELEVEN_ACCOUNT)
+b = requests.get(res["data"]["file"]["s3url"], timeout=60).content
+r, e = proxy_execute("PUT", f"/repos/qixings/sirahshorts-media/contents/episodes/{SLUG}/vo.mp3", "github",
+    body={"message": f"Voice for {SLUG}", "content": base64.b64encode(b).decode()})
+```
+Then `git pull` (or `git fetch --depth 1 origin main && git reset --hard origin/main` before you have local changes)
+so `episodes/<slug>/vo.mp3` is on disk.
+- If ElevenLabs answers 401, 402, "quota", "credits" or "payment": send 🚨 "ElevenLabs credits are used up (or the key
+  stopped working). To keep daily posts: upgrade ElevenLabs (Starter is about $5/month) or tell Claude which voice to
+  use." Then stop. Do not switch voices on your own.
+
+## Step 7. Build the video
+
+Work in `episodes/<slug>/`. Copy the fonts: `cp -r ../../engine/core/fonts .`
+```bash
+mkdir -p audio/takes out && ffmpeg -v error -y -i vo.mp3 -ar 48000 audio/takes/T01_all.wav
+T=../../engine/tools
+python3 $T/split_takes.py --project . && python3 $T/build_narration.py --project . --lead 0.4 --tail 1.8
+```
+If split_takes flags a line, look at the report and fix with audio/overrides.json (see the tool's docstring).
+
+Write `paint_<slug>.py` modeled on `engine/examples/part3/paint3.py` (and part2): import the helpers from
+`engine/core/paint.py` (`sys.path.insert(0, str(REPO / "engine" / "core"))`), define 6 to 8 scenes in a 1080x1920
+frame, scene boundaries at line starts, crossfades, the title card on scene 1
+("STORIES OF THE PROPHETS" / "PROPHET <NAME> · PART <N>"), a small verse label pill per scene (`label()`), and the
+"PART <N+1> · FOLLOW" end card on the last scene placed at y 900 to 1420 so captions at y 662 do not cover it.
+Keep the house style: warm painted gradients, parallax, slow camera push, glowing oval light for the prophet, gold
+(222,182,96) accents, Bebas Neue (`TF_COND`) and Montserrat (`TF_SANS`). New helper drawings (mountain, sea, staff,
+serpent as a simple curved shape, palace, boat) are fine; keep them simple and readable.
+
+Review before rendering: `python3 paint_<slug>.py --probe <one time per scene>` then look at every still (Read the PNG).
+Check: the light is visible, no person or face appears, text is readable and not cut off, nothing is empty or broken.
+Fix and probe again. Then:
+```bash
+python3 paint_<slug>.py --out out/paint.mp4
+ffmpeg -v error -y -i audio/narration.m4a -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -ar 48000 audio/voice.m4a
+CAPTION_Y=0.345 python3 $T/burn_captions.py --project "$PWD" --video out/paint.mp4 --audio audio/voice.m4a --style highlighter --out out/cap.mp4 --workers 2 --crf 18
+ffmpeg -v error -y -i out/cap.mp4 -c:v libx264 -preset slow -crf 27 -tune grain -pix_fmt yuv420p -c:a copy -movflags +faststart ../../videos/<slug>.mp4
+```
+Check the final file with ffprobe: has video and audio, 30 to 75 seconds, under 95 MB. Grab 4 stills from it and look.
+
+## Step 8. Publish the files
+
+Commit `videos/<slug>.mp4` and `episodes/<slug>/` (script.json, paint file, vo.mp3; not out/ or audio/) and push to main.
+Confirm `curl -sI <raw_base>videos/<slug>.mp4` returns 200.
+
+## Step 9. Schedule the posts
+
+Captions follow the pattern of the existing episodes:
+```
+<hook sentence> <one emoji>
+
+Prophet <Name> (AS), Part <N>: <Title>
+<one sentence summary>
+📖 Surah <Name> <refs>
+
+New here? Start with Part 1, pinned on our profile.
+Follow @sirahshorts for Part <N+1> <emoji>
+
+#Prophet<Name> #StoriesOfTheProphets #IslamicHistory #QuranStories #Islam
+```
+For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profile" with "on our Page".
+
+- Facebook: FACEBOOK_PUBLISH_PAGE_REEL with page_id, file_url = raw URL, video_state "SCHEDULED",
+  scheduled_publish_time = Unix time of the target date and time (IST is UTC+5:30), is_ai_generated false.
+- Instagram: create a one-time scheduled task (create_trigger, run_once_at "<date>T<time>:00[Asia/Calcutta]",
+  initiation "human_schedule", notifications push) whose prompt publishes the Reel: Composio
+  INSTAGRAM_POST_IG_USER_MEDIA (ig_user_id "me", media_type REELS, share_to_feed true, thumb_offset 2500, video_url,
+  exact caption), then INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH (max_wait_seconds 240), verify with INSTAGRAM_GET_IG_MEDIA,
+  skip if a Reel with the same caption opening already exists, then send a Telegram message to chat 8722468322:
+  "✅ Live on Instagram: <title> <permalink>" or a 🚨 alert on failure. Copy the wording of the Part 2 task in
+  state.json's ig_trigger if useful.
+
+## Step 10. Save state and report
+
+Move the plan item into `episodes` with date, time, status "scheduled", fb_video_id, ig_trigger, refs, video path.
+When the plan has 5 or fewer items left, append the next parts for the next prophet in the same style (Ibrahim, Yunus,
+Sulaiman, Isa, then Muhammad ﷺ, whose Sirah gives the account its name) and say so in the report.
+Commit and push state.json.
+
+Send one Telegram message (TELEGRAM_SEND_MESSAGE, chat_id 8722468322, plain text, no parse_mode):
+```
+🎬 New episode ready: Prophet <Name>, Part <N>: <Title>
+🗓 Posting <weekday date>, <time> IST on Instagram + Facebook
+📊 Yesterday: <views> views, <likes> likes on <title> (or "stats not available yet")
+👥 Followers: <n>
+<any time change, or anything that needs attention>
+```
+Every failure anywhere: send "🚨 <what failed>, <what Rony should do>" and stop. Never post anything you have not
+checked frame by frame.

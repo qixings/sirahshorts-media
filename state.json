@@ -1,0 +1,51 @@
+{
+  "account": "Sirah Shorts",
+  "series_title": "STORIES OF THE PROPHETS",
+  "timezone": "Asia/Calcutta",
+  "telegram": {"chat_id": 8722468322, "composio_account": "telegram_hackle-scient", "bot": "@sirahshorts_updates_bot"},
+  "instagram": {"composio_account": "instagram_lite-clam", "username": "sirahshorts", "ig_user_id": "me"},
+  "facebook": {"composio_account": "facebook_fabes-thrill", "page_id": "1387080787828937", "page_name": "Sirah Shorts"},
+  "github": {"composio_account": "github_braid-betalk", "repo": "qixings/sirahshorts-media", "raw_base": "https://raw.githubusercontent.com/qixings/sirahshorts-media/main/"},
+  "elevenlabs": {
+    "composio_account": "elevenlabs_glory-amapa",
+    "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "voice_name": "George - Warm, Captivating Storyteller",
+    "model_id": "eleven_multilingual_v2",
+    "plan": "free",
+    "note": "Free plan cannot use library voices via API. When the user upgrades, switch voice_id to Gregory Grumble 8TMmdpPgqHKvDOGYP2lN (Parts 2-3 voice) or Grandfather Joe 0lp4RIz96WD1RUtvEu3Q (Part 1 voice)."
+  },
+  "posting": {
+    "default_time_ist": "20:00",
+    "current_time_ist": "20:00",
+    "frequency": "daily",
+    "max_future_scheduled": 2,
+    "time_decision_log": []
+  },
+  "episodes": [
+    {"n": 1, "prophet": "Musa", "part": 1, "title": "Saved by the River", "refs": "Al-Qasas 28:4-13", "video": "videos/musa-part1.mp4", "date": "2026-11-18", "time_ist": "14:52", "status": "posted", "ig_media_id": "18658667887032286", "ig_permalink": "https://www.instagram.com/reel/Df4LClWn-t4/", "fb_video_id": "2633000833832113", "voice": "Grandfather Joe (manual)"},
+    {"n": 2, "prophet": "Musa", "part": 2, "title": "The Flight", "refs": "Al-Qasas 28:14-22", "video": "videos/musa-part2.mp4", "date": "2026-11-19", "time_ist": "20:00", "status": "scheduled", "fb_video_id": "3064721327225915", "ig_trigger": "trig_01C977M4TrrgREPWjP1XYqLt", "voice": "Gregory Grumble (manual)"},
+    {"n": 3, "prophet": "Musa", "part": 3, "title": "The Well of Madyan", "refs": "Al-Qasas 28:23-29", "video": "videos/musa-part3.mp4", "date": "2026-11-20", "time_ist": "20:00", "status": "scheduled", "fb_video_id": "1132944976144734", "ig_trigger": "trig_0111bsNzuwCve64J34rz5G9K", "voice": "Gregory Grumble (manual)"}
+  ],
+  "plan": [
+    {"prophet": "Musa", "part": 4, "title": "The Fire on the Mountain", "refs": "Taha 20:9-36; Al-Qasas 28:29-35", "beats": "Returning with his family, he sees a fire at Tur; called from the blessed valley; told to remove his sandals; the staff becomes a moving serpent; the hand comes out shining white; he asks for his brother Harun as helper; hook: now he must face Pharaoh."},
+    {"prophet": "Musa", "part": 5, "title": "Facing Pharaoh", "refs": "Taha 20:42-56; Ash-Shu'ara 26:16-33", "beats": "Musa and Harun go to Pharaoh with gentle speech; Pharaoh reminds Musa he raised him; asks who is your Lord; the signs shown; Pharaoh calls it magic and sets a day of contest."},
+    {"prophet": "Musa", "part": 6, "title": "The Magicians", "refs": "Taha 20:57-73; Al-A'raf 7:113-126", "beats": "The festival day; magicians throw ropes and staffs that seem to move; Musa feels fear and is told not to fear; his staff swallows what they made; the magicians fall in prostration and believe; Pharaoh threatens them and they stand firm."},
+    {"prophet": "Musa", "part": 7, "title": "The Signs", "refs": "Al-A'raf 7:130-136", "beats": "Years of drought and shortage; flood, locusts, lice, frogs and blood as distinct signs; each time they ask Musa to pray and promise to believe, then break the promise."},
+    {"prophet": "Musa", "part": 8, "title": "The Sea Splits", "refs": "Ash-Shu'ara 26:52-68; Yunus 10:90-92", "beats": "Bani Israel leave by night; Pharaoh pursues; at the sea they say we will be overtaken; Musa says my Lord is with me; strike the sea with your staff; it parts like great mountains; Pharaoh drowns; his body is preserved as a sign."},
+    {"prophet": "Musa", "part": 9, "title": "The Journey to Khidr", "refs": "Al-Kahf 18:60-70", "beats": "Musa sets out to the junction of the two seas with his young companion; the fish slips away; they meet a servant of Allah given knowledge; Musa asks to follow him; you will not have patience."},
+    {"prophet": "Musa", "part": 10, "title": "Three Strange Acts", "refs": "Al-Kahf 18:71-78", "beats": "The boat is damaged; a boy is killed (keep this non-graphic, no depiction); the wall is rebuilt in a town that refused them hospitality; Musa objects each time; this is the parting between me and you."},
+    {"prophet": "Musa", "part": 11, "title": "The Hidden Wisdom", "refs": "Al-Kahf 18:79-82", "beats": "The boat belonged to poor people and a king seized every sound ship; the boy and his believing parents; the wall hid a treasure of two orphans whose father was righteous; I did not do it of my own accord. End the Musa series and tease the next prophet: Yusuf."},
+    {"prophet": "Yusuf", "part": 1, "title": "The Dream", "refs": "Yusuf 12:4-6", "beats": "Eleven stars, the sun and the moon prostrating; his father Yaqub tells him not to tell his brothers."},
+    {"prophet": "Yusuf", "part": 2, "title": "The Well", "refs": "Yusuf 12:7-18", "beats": "The brothers' jealousy; the plan; thrown into the well; the shirt with false blood; Yaqub says beautiful patience."},
+    {"prophet": "Yusuf", "part": 3, "title": "Sold in Egypt", "refs": "Yusuf 12:19-22", "beats": "Travelers draw water and find him; sold for a few dirhams; the Egyptian who bought him tells his wife to honor him."},
+    {"prophet": "Yusuf", "part": 4, "title": "The Test", "refs": "Yusuf 12:23-29", "beats": "Keep modest and non-sensual: the woman of the house tries to seduce him, he seeks refuge in Allah; the torn shirt from behind proves his innocence."},
+    {"prophet": "Yusuf", "part": 5, "title": "Prison", "refs": "Yusuf 12:33-42", "beats": "He prefers prison; two prisoners' dreams; he calls them to tawhid first; interprets the dreams."},
+    {"prophet": "Yusuf", "part": 6, "title": "The King's Dream", "refs": "Yusuf 12:43-49", "beats": "Seven fat cows eaten by seven lean, seven green ears and seven dry; Yusuf explains the years of plenty and famine."},
+    {"prophet": "Yusuf", "part": 7, "title": "Over the Treasures", "refs": "Yusuf 12:50-57", "beats": "He insists his innocence be cleared first; the women confess; he is placed over the storehouses of the land."},
+    {"prophet": "Yusuf", "part": 8, "title": "The Brothers Return", "refs": "Yusuf 12:58-79", "beats": "The brothers come for grain and do not recognize him; Binyamin; the king's cup in the bag."},
+    {"prophet": "Yusuf", "part": 9, "title": "The Reunion", "refs": "Yusuf 12:80-101", "beats": "Yaqub's grief and hope; I am Yusuf; no blame on you today; the shirt cast over his father's face restores his sight; the dream comes true."},
+    {"prophet": "Nuh", "part": 1, "title": "Nine Hundred and Fifty Years", "refs": "Al-Ankabut 29:14; Nuh 71:1-20", "beats": "His long call night and day; they put fingers in their ears."},
+    {"prophet": "Nuh", "part": 2, "title": "The Ark", "refs": "Hud 11:36-44", "beats": "Build the ark under Our eyes; they mock; the oven gushes; pairs of every kind; his son refuses; the flood; it rests on Al-Judi."}
+  ],
+  "stats": []
+}

@@ -1,0 +1,117 @@
+{
+ "title": "Musa, Part 3: The Well of Madyan",
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "After a long journey, Musa reached the wells of Madyan.",
+     "spoken": "After a long journey, Musa reached the wells of Mad-yan.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 2,
+     "text": "Shepherds crowded the water, but two women held their sheep back.",
+     "spoken": "Shepherds crowded the water, but two women held their sheep back.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 3,
+     "text": "\"What is wrong?\" he asked.",
+     "spoken": "\"What is wrong?\" he asked.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 4,
+     "text": "\"We cannot water until the shepherds leave. Our father is very old.\"",
+     "spoken": "\"We cannot water until the shepherds leave. Our father is very old.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 5,
+     "text": "So Musa watered their flocks for them.",
+     "spoken": "So Musa watered their flocks for them.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 6,
+     "text": "Then he sat in the shade and prayed: \"My Lord, I truly need any good You send me.\"",
+     "spoken": "Then he sat in the shade and prayed: \"My Lord, I truly need any good You send me.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 7,
+     "text": "Soon, one of the women came, walking shyly.",
+     "spoken": "Soon, one of the women came, walking shyly.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 8,
+     "text": "\"My father invites you, to reward you.\"",
+     "spoken": "\"My father invites you, to reward you.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 9,
+     "text": "The old man heard his story and said: \"Do not fear, you are safe now.\"",
+     "spoken": "The old man heard his story and said: \"Do not fear, you are safe now.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 10,
+     "text": "One daughter said: \"Father, hire him. He is strong and trustworthy.\"",
+     "spoken": "One daughter said: \"Father, hire him. He is strong and trustworthy.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 11,
+     "text": "He offered Musa one of his daughters in marriage, for eight years of work, and Musa agreed.",
+     "spoken": "He offered Musa one of his daughters in marriage, for eight years of work, and Musa agreed.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 12,
+     "text": "Years later, he saw a fire on Mount Tur.",
+     "spoken": "Years later, he saw a fire on Mount Toor.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 13,
+     "text": "What did he find there? Follow for Part 4.",
+     "spoken": "What did he find there? Follow for Part four.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ],
+ "fact_notes": [
+  "Quran 28:23-29"
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "title": "Musa, Part 2: The Flight",
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "Musa grew up in Pharaoh's own palace, strong and wise.",
+     "spoken": "Musa grew up in Pharaoh's own palace, strong and wise.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 2,
+     "text": "One day in the city, he found two men fighting.",
+     "spoken": "One day in the city, he found two men fighting.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 3,
+     "text": "He struck the Egyptian once, and the man fell dead.",
+     "spoken": "He struck the Egyptian once, and the man fell dead.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 4,
+     "text": "Musa turned to Allah: My Lord, I have wronged myself, forgive me.",
+     "spoken": "Musa turned to Allah: My Lord, I have wronged myself, forgive me.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 5,
+     "text": "And Allah forgave him.",
+     "spoken": "And Allah forgave him.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 6,
+     "text": "Then a man came running: the chiefs are plotting to kill you. Leave!",
+     "spoken": "Then a man came running: the chiefs are plotting to kill you. Leave!",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 7,
+     "text": "So Musa fled alone, into the desert, toward Madyan.",
+     "spoken": "So Musa fled alone, into the desert, toward Mad-yan.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 8,
+     "text": "What waited for him at the well of Madyan? Follow for Part 3.",
+     "spoken": "What waited for him at the well of Mad-yan? Follow for Part three.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ],
+ "fact_notes": [
+  "Quran 28:14-22"
+ ]
+}
