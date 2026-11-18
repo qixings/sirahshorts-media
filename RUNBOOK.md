@@ -253,6 +253,37 @@ anything. At most `state.outreach.weekly_max` (5) new creators per week, never a
    their handle to the next episode's Instagram post as a collaborator if the Composio tool supports it, otherwise tell
    Rony to add them in the app.
 
+## Step 9c. Weekly long video for YouTube (Sundays only)
+
+Only when today is Sunday (IST). Long videos pay about 10 times more per view than Shorts and their watch hours count
+toward YouTube monetization, so every Sunday we join finished Shorts into one 16:9 film. Make at most one per Sunday.
+1. Pick what to join, in this order:
+   a. Full story: a prophet whose parts are all posted (nothing left for them in `plan`) and who has no entry with
+      `"kind": "full"` in `state.long_videos`. Use every part. Title "The Full Story".
+   b. Chapter: otherwise, the current prophet's posted parts that are not yet in any `state.long_videos` entry of kind
+      "chapter". Need at least 3 such parts. Title: a short name for that stretch of the story (e.g. "The Early Life",
+      "Musa and Pharaoh").
+   Only use episodes whose status is "posted". If nothing qualifies, skip this step silently.
+2. Build: `python3 engine/tools/compile_long.py --prophet <Name> --title "<Title>" --parts "N:<Part title>:videos/<slug>.mp4" ...
+   --next "Next: Part <N+1>, <Title>" --out long/<prophet>-<first>-<last>.mp4` (for a full story, --next names the next
+   prophet in the plan). It adds a title card, side panels with the part names, and an end card, keeps the narration,
+   adds no music, and writes `<out>.chapters.txt` and `<out>.thumb.jpg`. If the file is over 90 MB, rebuild with
+   `--crf 27`. Check stills from the title card, two parts and the end card before going on.
+3. Commit `long/` and push; confirm the raw URL returns 200.
+4. YouTube (account youtube_clam-adrip), in COMPOSIO_REMOTE_WORKBENCH: skip if a video with the same title exists,
+   else upload_local_file() then YOUTUBE_MULTIPART_UPLOAD_VIDEO with title
+   "Prophet <Name> (AS) | <Title> (Parts <a> to <b>) | Stories of the Prophets" (max 100 chars, no #Shorts),
+   categoryId "27", privacyStatus "public", 10 to 15 tags, and this description:
+   one or two sentence summary; blank line; the chapters from chapters.txt (first one must be 0:00); blank line;
+   "📖 Surah <refs of every part>"; "Out of respect, no Prophet or person is shown; Prophet <Name> (AS) appears as a
+   glowing light."; "Watch the parts as Shorts in the Prophet <Name> playlist."; 3 hashtags.
+   Then YOUTUBE_ADD_VIDEO_TO_PLAYLIST with the prophet's playlist. If Composio has a YouTube thumbnail tool, set the
+   thumb.jpg as the thumbnail; if it fails (the channel may need phone verification), just note it, not an alert.
+5. Facebook: if the film is 3 minutes or longer, also post it on the Page as a normal video (not a Reel) with the
+   same title and description, published now. A failure here is one line in the report, not an alert.
+6. Add to `state.long_videos`: {kind, prophet, parts [n...], title, file, duration, yt_video_id, fb_video_id, date}.
+   Report line: "🎬 Long video live: <Title> https://youtu.be/<id>".
+
 ## Step 10. Save state and report
 
 Move the plan item into `episodes` with date, time, status "scheduled", fb_video_id, ig_trigger (it also does YouTube), refs, video path.

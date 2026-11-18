@@ -257,5 +257,6 @@
     "rejected": [],
     "specials_every_n_days": 4,
     "vidiq_monthly_credits": 150
-  }
+  },
+  "long_videos": []
 }
