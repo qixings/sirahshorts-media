@@ -8,6 +8,16 @@ send a Telegram alert that starts with 🚨 and says exactly what to do, then st
 Everything about the accounts, the voice, the posting time, past episodes and the content plan lives in `state.json`.
 Update it and push it at the end of every run.
 
+## Accounts rule (read first)
+
+Other brands (HookMantra, Message Cleaner) have their own connected accounts in the same Composio toolkits, and the
+"default" account of a toolkit can change when a new one is connected. So EVERY Composio tool call in this runbook
+and in every one-time post task you create must name its account explicitly: run_composio_tool(..., account=<id>)
+in the workbench, or "account": "<id>" in COMPOSIO_MULTI_EXECUTE_TOOL. Take the ids from state.json
+(instagram.composio_account = instagram_lite-clam, facebook, youtube, pinterest, gmail, telegram, elevenlabs, github).
+Before any Instagram publish, check that INSTAGRAM_GET_USER_INFO (or the media list) on that account shows the
+username "sirahshorts"; if not, do not post and send 🚨.
+
 ## Hard content rules (never break these)
 
 1. **No depiction of any prophet or any person.** A prophet is shown only as the glowing oval of light (`light()` in
