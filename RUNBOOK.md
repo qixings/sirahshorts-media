@@ -143,7 +143,7 @@ r, e = proxy_execute("PUT", f"/repos/qixings/sirahshorts-media/contents/episodes
 Then `git pull` (or `git fetch --depth 1 origin main && git reset --hard origin/main` before you have local changes)
 so `episodes/<slug>/vo.mp3` is on disk.
 - If ElevenLabs answers 401, 402, "quota", "credits" or "payment": send 🚨 "ElevenLabs credits are used up (or the key
-  stopped working). To keep daily posts: upgrade ElevenLabs (Starter is about $5/month) or tell Claude which voice to
+  stopped working). You are on ElevenAPI Starter: add credits or move to Creator, or tell Claude which voice to
   use." Then stop. Do not switch voices on your own.
 
 ## Step 7. Build the video
