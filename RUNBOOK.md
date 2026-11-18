@@ -82,6 +82,33 @@ Today and times are in IST. Count episodes with status "scheduled" and a future 
 `posting.max_future_scheduled` (2) or more, skip to Step 10 and send only a short daily report.
 Otherwise the target date is the earliest date, starting tomorrow, that has no episode. (Never schedule for today.)
 
+## Step 3b. Trend research (Fridays only) and specials
+
+Only on Fridays (IST). Budget: vidIQ has 150 credits a month, shared with outreach; spend at most 10 here per week.
+1. Find what is working right now in the niche:
+   - YOUTUBE_SEARCH_YOU_TUBE through Composio (free) for 3 to 4 queries such as "story of prophet", "islamic story",
+     "sahaba story", "quran story" with type video, order viewCount, publishedAfter = 30 days ago, short duration.
+   - One mcp vidIQ call: vidiq_instagram_tiktok_outlier_search (5 credits), query "Islamic stories of the prophets and
+     companions", audienceQuery "Culture/Region: Muslim audiences; Global: true; Demographics: 16-40, practicing Muslims;".
+   Note the stories and hooks that are clearly outperforming (topic, angle, length), not the creators.
+2. Authenticity check for every candidate story (this decides everything):
+   - Allowed sources only: the Qur'an; hadith in Sahih al-Bukhari or Sahih Muslim; hadith graded sahih or hasan by
+     recognized scholars in the other major collections; well-established seerah events agreed on by the major seerah
+     works. Verify the exact source text yourself (quran.com, sunnah.com with WebFetch) and record collection and number.
+   - Reject: stories found only in Israiliyyat, weak (da'if) or fabricated narrations, "viral" moral tales with no chain,
+     unverifiable miracle claims, "scientific miracle" claims, anything sectarian or politically charged, and anything
+     that would need a prophet, companion or person to be shown. Put rejected ideas in `state.trends.rejected` with the
+     reason so they are never re-checked.
+   - When in doubt, reject. Never present a weaker narration as certain.
+3. Turn each accepted idea into our own original story (never copy another creator's script, visuals or audio). If it
+   needs more than 60 seconds, split it into consecutive 30 to 60 second parts, each ending with a cliffhanger.
+   Add them to `state.trends.ideas` with title, sources, parts and beats.
+4. Scheduling specials: every `specials_every_n_days` (4) days, the next episode is the first accepted special instead
+   of the next series part (a multi-part special runs on consecutive days, then the series resumes where it stopped).
+   Specials use the title card "SIRAH SHORTS SPECIAL" and the caption line "📖 Source: <Qur'an refs or hadith collection
+   and number>". Companions and other people are never depicted either; use objects, places and light as usual.
+5. In the Friday report add one line, for example "🔎 Trends: 2 ideas added (Bilal's call to prayer, 2 parts), 3 rejected".
+
 ## Step 4. Choose the posting time
 
 - Fewer than 100 followers and fewer than 7 posted Reels: keep `posting.current_time_ist` (20:00).
@@ -212,7 +239,7 @@ anything. At most `state.outreach.weekly_max` (5) new creators per week, never a
 1. Find candidates: vidiq_instagram_account_discovery with niche "Islamic reminders, Quran and prophet stories, Islamic
    history" and an audience line for English-speaking Muslims (Global: true), followers 5,000 to 150,000. Skip accounts
    that are not clearly respectful Islamic content, that post music, or that look like large media companies.
-2. For each, read the public profile (vidiq_ig_profile, or SCRAPECREATORS_GET_INSTAGRAM_PROFILE) and use only a business
+2. For each, read the public profile with SCRAPECREATORS_GET_INSTAGRAM_PROFILE through Composio (cheap; save vidIQ credits) and use only a business
    email the creator shows publicly in their bio or contact button. No email shown: skip them. Never guess emails.
 3. Send from sirahshorts@gmail.com with GMAIL_SEND_EMAIL (account gmail_melas-mong), plain text, short and personal:
    subject "Collab idea: Stories of the Prophets x @<handle>"; mention one specific thing about their content; one line

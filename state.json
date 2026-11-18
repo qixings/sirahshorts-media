@@ -250,5 +250,12 @@
     "contacted": [],
     "rules": "Instagram Collab post proposal only, creators with a PUBLIC business email, one follow-up after 7 days, never the same creator twice."
   },
-  "whatsapp_channel": "manual: Rony forwards the copy-ready text sent to Telegram"
+  "whatsapp_channel": "manual: Rony forwards the copy-ready text sent to Telegram",
+  "trends": {
+    "last_research": null,
+    "ideas": [],
+    "rejected": [],
+    "specials_every_n_days": 4,
+    "vidiq_monthly_credits": 150
+  }
 }
