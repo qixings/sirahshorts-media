@@ -36,7 +36,7 @@ Distilled from Instagram's public ranking guidance (via the MIT-licensed sergebu
 - No engagement bait ("comment YES", "tag 3 friends", "like if"). A soft save or share line is fine, for example
   "Save this to tell your kids" or "Send this to someone who loves these stories", used on about every other episode.
 - Original audio only (the narration), no watermarks from other apps.
-- Do not auto-reply to comments. In the report, mention if there are new comments worth answering.
+- Reply to comments only as Step 2b allows. Never answer religious rulings or debates automatically.
 
 ## Step 0. Set up
 
@@ -75,6 +75,38 @@ Acknowledge what you did with one short line in the report (for example "Done: p
   shares, saved) and append a dated row to `state.stats`. Missing metrics are "unavailable", not zero.
 - INSTAGRAM_GET_USER_INFO for followers_count. Once followers are 100 or more, also read INSTAGRAM_GET_USER_INSIGHTS
   metric online_followers (period lifetime) for the last 7 days.
+
+## Step 2b. Reply to comments
+
+Every run. Read new comments from the last 3 days of posts: Instagram (INSTAGRAM_GET_IG_MEDIA_COMMENTS per ig_media_id),
+Facebook (FACEBOOK_GET_COMMENTS per fb_video_id) and YouTube (YOUTUBE_LIST_COMMENT_THREADS2, videoId, textFormat
+plainText). Skip any comment id already in `state.comments.seen`, our own comments, and comments that already have a
+reply from us. Sort each new comment into one group:
+
+| Group | Examples | What to do |
+|---|---|---|
+| Kind words, duas | "MashaAllah", "JazakAllah", "Ameen", "beautiful", hearts | Short warm reply, varied wording, e.g. "Ameen, JazakAllahu khairan for watching 🤍" |
+| Next part | "Part 2?", "when next" | Give the next part's day and time from `episodes`, e.g. "Part 4 comes Saturday at 8 PM IST, in shaa Allah 🌙" |
+| Source | "where is this from", "which surah", "from the bible" | State the Surah and verses of that episode, calmly, e.g. "This part follows Surah Al-Qasas 28:7-13 in the Qur'an 📖". No comparison or debate |
+| Story request | "do Prophet Yunus next" | Thank them; add the idea to `state.trends.ideas` with source "comment" |
+| Ruling or deep question | halal/haram, fiqh, tafsir disputes, "is it allowed to..." | Do NOT reply. Send to Rony (see below) |
+| Correction | "this is wrong, actually..." | Do NOT reply. Check the claim on quran.com / sunnah.com, send Rony the claim, what you found, and a suggested reply |
+| Collab, business | "collab?", "promote my page" | Do NOT reply. Send to Rony |
+| Spam, hate, arguments, insults to any faith | | Ignore. Never reply, never delete |
+
+Reply tools: INSTAGRAM_POST_IG_COMMENT_REPLIES (ig_comment_id, max 300 chars), FACEBOOK_CREATE_COMMENT (object_id =
+the comment id), YOUTUBE_CREATE_COMMENT_REPLY (parentId, textOriginal). Rules for every reply:
+- One or two short sentences in the commenter's language when it is English, Hindi/Urdu or Bengali; otherwise English.
+- Never the same text twice in one run; vary wording. At most one emoji. No links, no hashtags, no "follow us".
+- At most 15 replies per platform per run. Never say you are an AI or a bot; just speak as Sirah Shorts.
+- When unsure which group a comment is in, do not reply; send it to Rony.
+
+Add every handled comment id to `state.comments.seen` (keep the last 500) and count replies in `state.comments.replied`.
+Telegram: in the daily report add "💬 Replied to <n> comments" when n > 0. For each comment that needs Rony, send a
+separate short Telegram message:
+"💬 Needs you · <platform> · <episode title>\n\"<comment text>\" by <name>\n<link to the post>\nSuggested reply: <reply>"
+(suggested reply only for corrections and simple questions; for rulings suggest "Please ask a qualified scholar, we
+only tell the stories from the Qur'an.").
 
 ## Step 3. Decide whether to make a video today
 
