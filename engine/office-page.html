@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sirah Shorts HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#14111c; --panel:#211b2e; --line:#3a3150; --gold:#e6b85c; --cream:#f3e6c8; --dim:#9a8fb0; --red:#ff5a5a; --green:#7be08a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--cream); font-family:'VT323', monospace; font-size:20px; }
+  .wrap { max-width:760px; margin:0 auto; padding:14px 12px 40px; }
+  h1 { font-family:'Press Start 2P', monospace; font-size:15px; color:var(--gold); margin:4px 0 4px; letter-spacing:1px; }
+  .sub { color:var(--dim); font-size:18px; margin-bottom:10px; }
+  canvas { width:100%; image-rendering:pixelated; image-rendering:crisp-edges; border:3px solid var(--line); border-radius:6px; display:block; background:#000; cursor:pointer; }
+  .note { font-size:17px; color:var(--dim); margin:6px 2px 0; min-height:20px; }
+  .note.warn { color:#ffb86b; }
+  h2 { font-family:'Press Start 2P', monospace; font-size:11px; color:var(--gold); margin:22px 0 10px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
+  .card { background:var(--panel); border:2px solid var(--line); border-radius:6px; padding:10px 12px; transition:border-color .2s, transform .2s; }
+  .card.sel { border-color:var(--gold); transform:translateY(-2px); }
+  .card .top { display:flex; align-items:center; gap:8px; }
+  .card .name { font-family:'Press Start 2P', monospace; font-size:10px; line-height:1.4; }
+  .pill { margin-left:auto; font-size:16px; padding:1px 8px; border-radius:10px; background:#2d2540; white-space:nowrap; }
+  .pill.working { background:#1f4a2a; color:var(--green); }
+  .pill.needs_you { background:#4a1f1f; color:var(--red); }
+  .pill.done { background:#2a3550; color:#9fc3ff; }
+  .pill.sleeping { color:var(--dim); }
+  .card .task { margin-top:6px; font-size:19px; line-height:1.15; }
+  .card .meta { margin-top:6px; font-size:16px; color:var(--dim); }
+  ul.list { list-style:none; padding:0; margin:0; }
+  ul.list li { background:var(--panel); border:2px solid var(--line); border-radius:6px; padding:8px 12px; margin-bottom:8px; font-size:19px; }
+  ul.list li.alert { border-color:#7a2f2f; }
+  .empty { color:var(--dim); font-size:18px; }
+  .legend { display:flex; flex-wrap:wrap; gap:14px; font-size:17px; color:var(--dim); margin-top:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SIRAH SHORTS HQ</h1>
+  <div class="sub">Your automation team at work. Tap a desk to see what they're doing.</div>
+  <canvas id="c"></canvas>
+  <div class="note" id="note">Connecting to the office…</div>
+  <div class="legend"><span>⌨️ working</span><span>☕ done for today</span><span>💤 sleeping until their shift</span><span>❗ needs you</span></div>
+
+  <h2>❗ NEEDS YOU</h2>
+  <ul class="list" id="needs"></ul>
+
+  <h2>📅 COMING UP</h2>
+  <ul class="list" id="next"></ul>
+
+  <h2>👥 THE TEAM</h2>
+  <div class="cards" id="cards"></div>
+</div>
+
+<script>
+// Shown until live data arrives, or when the live store cannot be reached.
+const FALLBACK = {
+  updated_at: "2026-11-19T03:30:00+05:30",
+  followers: { instagram: 0, facebook: 0, youtube: 0 },
+  next_posts: [
+    { title: "Musa Part 2: The Flight", when: "Thu 19 Nov, 8:00 PM" },
+    { title: "Musa Part 3: The Well of Madyan", when: "Fri 20 Nov, 8:00 PM" }
+  ],
+  needs_you: [],
+  workers: [
+    { id:"animator", name:"Animator", emoji:"🎬", color:"#e0794f", hair:"#3b2618", schedule:"Daily 11:27 AM", status:"sleeping", task:"Makes the next episode: script, Gregory's voice, the illustrated video.", last_active:null },
+    { id:"publisher", name:"Publisher", emoji:"📤", color:"#4f8fe0", hair:"#1d1d24", schedule:"Every post time", status:"done", task:"Posted Musa Part 1 to Instagram, Facebook, YouTube and Pinterest.", last_active:"2026-11-18T14:52:00+05:30" },
+    { id:"community", name:"Community", emoji:"💬", color:"#5cc28a", hair:"#5a3a22", schedule:"Daily", status:"sleeping", task:"Replies to kind comments; sends questions to you.", last_active:null },
+    { id:"reporter", name:"Reporter", emoji:"📊", color:"#b07be0", hair:"#2b1a10", schedule:"Daily", status:"sleeping", task:"Collects stats, reads your Telegram, sends the daily report.", last_active:null },
+    { id:"researcher", name:"Researcher", emoji:"🔎", color:"#e0c24f", hair:"#111", schedule:"Fridays", status:"sleeping", task:"Finds trending story ideas and checks they're authentic.", last_active:null },
+    { id:"outreach", name:"Outreach", emoji:"✉️", color:"#e05c8f", hair:"#3d2b1f", schedule:"Mondays", status:"sleeping", task:"Emails up to 5 creators about Instagram Collab posts.", last_active:null },
+    { id:"editor", name:"Editor", emoji:"🎞️", color:"#4fd0d8", hair:"#20160f", schedule:"Sundays", status:"sleeping", task:"Joins finished parts into a long YouTube video.", last_active:null }
+  ]
+};
+
+let DATA = FALLBACK, live = false, selected = null;
+
+// ---------- helpers ----------
+const IST = 5.5 * 3600e3;
+function istNow() { return new Date(Date.now() + IST + new Date().getTimezoneOffset() * 60e3); }
+function hoursSince(iso) { if (!iso) return Infinity; const t = Date.parse(iso); return isNaN(t) ? Infinity : (Date.now() - t) / 3600e3; }
+function ago(iso) {
+  const h = hoursSince(iso); if (h === Infinity) return "not yet";
+  if (h < 1/60) return "just now"; if (h < 1) return Math.round(h*60) + " min ago";
+  if (h < 24) return Math.round(h) + " h ago"; return Math.round(h/24) + " d ago";
+}
+// The status a worker shows right now. Stale "working" means the run ended.
+function mood(w) {
+  if (w.status === "needs_you") return "needs_you";
+  if (w.status === "working" && hoursSince(w.last_active) < 2) return "working";
+  if ((w.status === "done" || w.status === "working") && hoursSince(w.last_active) < 14) return "done";
+  return "sleeping";
+}
+const LABEL = { working:"⌨️ working", done:"☕ done", sleeping:"💤 sleeping", needs_you:"❗ needs you" };
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
+function fmt(n) { n = +n || 0; return n >= 1e6 ? (n/1e6).toFixed(1)+"M" : n >= 1e3 ? (n/1e3).toFixed(1)+"k" : String(n); }
+
+// ---------- canvas ----------
+const cv = document.getElementById("c"), g = cv.getContext("2d");
+const W = 360, WALL = 92, CELL_W = 120, CELL_H = 112, COLS = 3;
+let cells = [];
+
+function px(x, y, w, h, c) { g.fillStyle = c; g.fillRect(Math.round(x), Math.round(y), w, h); }
+function text(s, x, y, c, size = 8, align = "left") {
+  g.font = size + "px 'Press Start 2P', monospace"; g.fillStyle = c; g.textAlign = align; g.textBaseline = "top"; g.fillText(s, x, y);
+}
+
+const FACE = [
+  "....HHHH....",
+  "..HHHHHHHH..",
+  ".HHHHHHHHHH.",
+  ".HHSSSSSSHH.",
+  ".HSSSSSSSSH.",
+  ".SSEESSEESS.",
+  ".SSSSSSSSSS.",
+  "..SSSMMSSS..",
+  "...SSSSSS...",
+];
+function drawSprite(rows, x, y, pal, u = 2) {
+  rows.forEach((r, j) => { for (let i = 0; i < r.length; i++) { const k = r[i]; if (pal[k]) px(x + i*u, y + j*u, u, u, pal[k]); } });
+}
+
+function drawWall(t) {
+  const now = istNow(), hr = now.getHours() + now.getMinutes()/60, night = hr < 6 || hr >= 19;
+  px(0, 0, W, WALL, "#2b2140");
+  for (let x = 0; x < W; x += 12) px(x, 0, 1, WALL, "#30264a");
+  px(0, WALL-6, W, 6, "#1e1730");
+  // window
+  const wx = 12, wy = 14, ww = 70, wh = 50;
+  px(wx-3, wy-3, ww+6, wh+6, "#5b4a3a");
+  const sky = night ? ["#0d1030","#1a1f4d"] : (hr < 8 || hr > 17 ? ["#f39c6b","#7c5aa6"] : ["#7ec8f0","#bfe6ff"]);
+  const grd = g.createLinearGradient(0, wy, 0, wy+wh); grd.addColorStop(0, sky[0]); grd.addColorStop(1, sky[1]);
+  g.fillStyle = grd; g.fillRect(wx, wy, ww, wh);
+  if (night) {
+    for (let i = 0; i < 14; i++) { const sx = wx + (i*37 % ww), sy = wy + (i*23 % (wh-10)); if ((Math.floor(t/400)+i) % 5) px(sx, sy, 1, 1, "#fff"); }
+    px(wx+48, wy+8, 10, 10, "#f6f1d0"); px(wx+51, wy+7, 9, 10, sky[0]);
+  } else {
+    px(wx+46, wy+10, 12, 12, "#ffe27a");
+    const cx = (t/120) % (ww+30) - 20; px(wx+cx, wy+28, 18, 5, "#ffffffcc"); px(wx+cx+4, wy+25, 10, 4, "#ffffffcc");
+  }
+  // dunes + minaret silhouette
+  px(wx, wy+wh-8, ww, 8, night ? "#1d1a33" : "#e2b773");
+  px(wx+14, wy+wh-24, 4, 16, night ? "#15132a" : "#c99a55"); px(wx+13, wy+wh-27, 6, 3, night ? "#15132a" : "#c99a55");
+  px(wx+ww/2-1, wy, 2, wh, "#5b4a3a"); px(wx, wy+wh/2-1, ww, 2, "#5b4a3a");
+  // board
+  const bx = 100, by = 10, bw = 170, bh = 64;
+  px(bx-3, by-3, bw+6, bh+6, "#6b5233"); px(bx, by, bw, bh, "#1d2a22");
+  text("SIRAH SHORTS HQ", bx + bw/2, by + 6, "#e6b85c", 8, "center");
+  const f = DATA.followers || {};
+  text("IG " + fmt(f.instagram), bx + 10, by + 24, "#f3e6c8", 7);
+  text("FB " + fmt(f.facebook), bx + 10, by + 36, "#f3e6c8", 7);
+  text("YT " + fmt(f.youtube), bx + 10, by + 48, "#f3e6c8", 7);
+  const total = (+f.instagram||0) + (+f.facebook||0) + (+f.youtube||0);
+  text("TOTAL", bx + bw - 10, by + 26, "#9a8fb0", 7, "right");
+  text(fmt(total), bx + bw - 10, by + 40, "#7be08a", 10, "right");
+  // clock
+  const cx = 316, cy = 38;
+  g.fillStyle = "#f3e6c8"; g.beginPath(); g.arc(cx, cy, 18, 0, Math.PI*2); g.fill();
+  g.strokeStyle = "#6b5233"; g.lineWidth = 3; g.stroke();
+  const h12 = (now.getHours()%12)/12*Math.PI*2 + now.getMinutes()/720*Math.PI*2, mn = now.getMinutes()/60*Math.PI*2;
+  g.strokeStyle = "#2b2140"; g.lineWidth = 3; g.beginPath(); g.moveTo(cx,cy); g.lineTo(cx+Math.sin(h12)*9, cy-Math.cos(h12)*9); g.stroke();
+  g.lineWidth = 2; g.beginPath(); g.moveTo(cx,cy); g.lineTo(cx+Math.sin(mn)*14, cy-Math.cos(mn)*14); g.stroke();
+  text("IST", cx, cy + 22, "#9a8fb0", 6, "center");
+  return total;
+}
+
+function drawFloor(H) {
+  for (let y = WALL; y < H; y += 16) for (let x = 0; x < W; x += 16)
+    px(x, y, 16, 16, ((x+y)/16) % 2 ? "#3d2f24" : "#43342a");
+}
+
+function drawPlant(total, t, H) {
+  const stage = total >= 10000 ? 5 : total >= 1000 ? 4 : total >= 200 ? 3 : total >= 50 ? 2 : total > 0 ? 1 : 0;
+  const x = W - 34, base = H - 10;
+  px(x, base-14, 22, 14, "#b0603a"); px(x-2, base-16, 26, 4, "#c8724a");
+  const sway = Math.sin(t/700) * 1.5, leaf = "#5cc28a", dark = "#3e9466";
+  const hgt = [4, 10, 18, 28, 38, 50][stage];
+  px(x+10, base-16-hgt, 2, hgt, dark);
+  for (let i = 0; i < stage + 1; i++) {
+    const ly = base - 18 - i * (hgt / (stage + 1)) - 2;
+    px(x+3+sway, ly, 7, 4, i % 2 ? dark : leaf); px(x+12+sway, ly-3, 7, 4, i % 2 ? leaf : dark);
+  }
+  if (stage >= 4) { px(x+8+sway, base-20-hgt, 6, 6, "#ffb3c8"); px(x+10+sway, base-18-hgt, 2, 2, "#ffe27a"); }
+}
+
+function drawWorker(w, cx, cy, t, i, isSel) {
+  const m = mood(w);
+  const shirt = w.color || "#888", hair = w.hair || "#2a1a10";
+  // chair back
+  px(cx+38, cy+22, 44, 40, "#4a3b56"); px(cx+40, cy+24, 40, 6, "#57466a");
+  // body
+  const slump = m === "sleeping" ? 6 : 0;
+  const bob = m === "working" ? (Math.floor(t/180 + i) % 2) : 0;
+  const pal = { H:hair, S:"#e8b48a", E: m === "sleeping" ? "#e8b48a" : "#2b1a10", M: m === "needs_you" ? "#a33" : "#b0605a" };
+  // torso
+  px(cx+44, cy+52+slump/2, 32, 22, shirt); px(cx+42, cy+56+slump/2, 4, 14, shirt); px(cx+74, cy+56+slump/2, 4, 14, shirt);
+  // head
+  const hx = cx+48, hy = cy+30 + slump - bob;
+  drawSprite(FACE, hx, hy, pal);
+  if (m === "sleeping") { px(hx+4, hy+10, 4, 1, "#2b1a10"); px(hx+14, hy+10, 4, 1, "#2b1a10"); }
+  else if (Math.floor(t/2600 + i*0.7) % 7 === 0 && (t % 2600) < 160) { px(hx+4, hy+10, 4, 2, "#e8b48a"); px(hx+14, hy+10, 4, 2, "#e8b48a"); }
+  // desk
+  px(cx+10, cy+70, 100, 8, "#8a5a36"); px(cx+10, cy+78, 100, 4, "#6e4528");
+  px(cx+14, cy+82, 6, 20, "#6e4528"); px(cx+100, cy+82, 6, 20, "#6e4528");
+  // hands
+  if (m === "working") {
+    const a = Math.floor(t/120 + i) % 2;
+    px(cx+46, cy+66 - a*2, 8, 4, "#e8b48a"); px(cx+66, cy+66 - (1-a)*2, 8, 4, "#e8b48a");
+    px(cx+44, cy+70, 32, 3, "#2b2b35");
+  } else if (m === "sleeping") {
+    px(cx+44, cy+66, 32, 5, shirt);
+  } else {
+    px(cx+48, cy+67, 8, 4, "#e8b48a"); px(cx+64, cy+67, 8, 4, "#e8b48a");
+  }
+  // monitor
+  const mx = cx+82, my = cy+46;
+  px(mx, my, 24, 18, "#2a2a33"); px(mx+10, my+18, 4, 6, "#2a2a33"); px(mx+6, my+23, 12, 2, "#2a2a33");
+  if (m === "working") {
+    px(mx+2, my+2, 20, 14, "#103a24");
+    for (let l = 0; l < 4; l++) { const len = 4 + ((Math.floor(t/150) + l*3 + i) % 12); px(mx+3, my+3 + l*3, Math.min(len, 18), 1, "#7be08a"); }
+  } else if (m === "needs_you") {
+    px(mx+2, my+2, 20, 14, (Math.floor(t/400) % 2) ? "#5a1d1d" : "#3a1414"); text("!", mx+12, my+5, "#ff5a5a", 8, "center");
+  } else if (m === "done") {
+    px(mx+2, my+2, 20, 14, "#1d2c4a"); px(mx+8, my+9, 3, 3, "#9fc3ff"); px(mx+11, my+11, 3, 2, "#9fc3ff"); px(mx+14, my+6, 3, 5, "#9fc3ff");
+  } else {
+    px(mx+2, my+2, 20, 14, "#111118");
+  }
+  // mug when done
+  if (m === "done") {
+    px(cx+22, cy+62, 9, 8, "#f3e6c8"); px(cx+31, cy+64, 3, 4, "#f3e6c8");
+    const s = Math.floor(t/300) % 3; px(cx+24+s, cy+56-s, 1, 3, "#ffffff88"); px(cx+28-s, cy+54-s, 1, 3, "#ffffff66");
+  }
+  // emoji badge on desk front
+  g.font = "10px sans-serif"; g.textAlign = "left"; g.textBaseline = "top"; g.fillText(w.emoji || "•", cx+16, cy+72);
+  // zzz
+  if (m === "sleeping") {
+    for (let k = 0; k < 3; k++) {
+      const p = ((t/1400) + k/3 + i*0.13) % 1;
+      const zx = hx + 26 + p*16 + Math.sin(p*6)*2, zy = hy + 4 - p*26;
+      g.globalAlpha = 1 - p; text("z", zx, zy, "#cfd6ff", 6 + Math.round(p*4)); g.globalAlpha = 1;
+    }
+  }
+  // needs-you bubble
+  if (m === "needs_you") {
+    const by = hy - 20 + Math.sin(t/180)*2;
+    px(hx+2, by, 20, 16, "#ffffff"); px(hx+9, by+16, 5, 4, "#ffffff");
+    text("!", hx+12, by+4, "#e03b3b", 8, "center");
+  }
+  // NEW sign
+  if (w.added && hoursSince(w.added) < 72) {
+    const ny = cy+6 + Math.sin(t/250)*1.5;
+    px(cx+8, ny, 30, 12, "#e6b85c"); text("NEW", cx+23, ny+3, "#2b2140", 6, "center");
+  }
+  // name plate
+  px(cx+30, cy+92, 60, 12, isSel ? "#e6b85c" : "#2b2140");
+  text(w.name.toUpperCase().slice(0, 10), cx+60, cy+95, isSel ? "#2b2140" : "#f3e6c8", 6, "center");
+}
+
+function layout() {
+  const n = (DATA.workers || []).length, rows = Math.max(1, Math.ceil(n / COLS));
+  const H = WALL + rows * CELL_H + 14;
+  if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
+  cells = DATA.workers.map((w, i) => {
+    const r = Math.floor(i / COLS), c = i % COLS, inRow = Math.min(COLS, n - r*COLS);
+    const off = (W - inRow * CELL_W) / 2;
+    return { w, x: off + c * CELL_W, y: WALL + 4 + r * CELL_H };
+  });
+  return H;
+}
+
+function frame(t) {
+  const H = layout();
+  g.imageSmoothingEnabled = false;
+  drawFloor(H);
+  const total = drawWall(t);
+  // rug
+  px(20, H-16, W-80, 8, "#5b2c3a"); px(24, H-14, W-88, 4, "#7a3a4c");
+  cells.forEach((c, i) => drawWorker(c.w, c.x, c.y, t, i, selected === c.w.id));
+  drawPlant(total, t, H);
+  requestAnimationFrame(frame);
+}
+
+cv.addEventListener("click", e => {
+  const r = cv.getBoundingClientRect(), x = (e.clientX - r.left) * cv.width / r.width, y = (e.clientY - r.top) * cv.height / r.height;
+  const hit = cells.find(c => x >= c.x && x < c.x + CELL_W && y >= c.y && y < c.y + CELL_H);
+  if (hit) { selected = hit.w.id; renderLists(); const el = document.getElementById("w-" + hit.w.id); if (el) el.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+});
+
+// ---------- lists ----------
+function renderLists() {
+  const needs = [...(DATA.needs_you || [])];
+  (DATA.workers || []).forEach(w => { if (mood(w) === "needs_you" && w.task) needs.push(w.emoji + " " + w.name + ": " + w.task); });
+  document.getElementById("needs").innerHTML = needs.length
+    ? needs.map(s => `<li class="alert">${esc(s)}</li>`).join("")
+    : `<li class="empty">Nothing right now. The team has it handled.</li>`;
+  const nx = DATA.next_posts || [];
+  document.getElementById("next").innerHTML = nx.length
+    ? nx.map(p => `<li>🎥 ${esc(p.title)}<br><span style="color:var(--dim)">${esc(p.when)}</span></li>`).join("")
+    : `<li class="empty">Nothing scheduled yet.</li>`;
+  document.getElementById("cards").innerHTML = (DATA.workers || []).map(w => {
+    const m = mood(w);
+    return `<div class="card ${selected === w.id ? "sel" : ""}" id="w-${esc(w.id)}">
+      <div class="top"><span style="font-size:22px">${esc(w.emoji)}</span><span class="name">${esc(w.name)}</span><span class="pill ${m}">${LABEL[m]}</span></div>
+      <div class="task">${esc(w.task)}</div>
+      <div class="meta">Shift: ${esc(w.schedule)} · Last active: ${ago(w.last_active)}</div></div>`;
+  }).join("");
+  const note = document.getElementById("note");
+  if (live) { note.className = "note"; note.textContent = "Live · last update from the team " + ago(DATA.updated_at); }
+}
+
+renderLists();
+setInterval(renderLists, 60e3);
+document.fonts && document.fonts.ready.then(() => requestAnimationFrame(frame));
+if (!document.fonts) requestAnimationFrame(frame);
+
+// ---------- live data ----------
+(async () => {
+  const note = document.getElementById("note");
+  let db = null;
+  try { db = await window.claude?.use?.("db"); } catch (e) { db = null; }
+  if (!db) { note.className = "note warn"; note.textContent = "Showing the last saved snapshot (live updates aren't available in this view)."; return; }
+  const timer = setTimeout(() => { if (!live) { note.className = "note warn"; note.textContent = "Can't reach the office yet, showing the last saved snapshot."; } }, 10000);
+  db.doc("office/status").onSnapshot(snap => {
+    if (snap.exists) {
+      const d = snap.data();
+      if (d && Array.isArray(d.workers) && d.workers.length) { DATA = d; live = true; }
+    } else if (!snap.metadata.fromCache) {
+      note.textContent = "Waiting for the team's first report…";
+    }
+    if (!snap.metadata.fromCache) clearTimeout(timer);
+    renderLists();
+  }, err => { clearTimeout(timer); note.className = "note warn"; note.textContent = "Live updates stopped, showing the last snapshot."; });
+})();
+</script>
+</body>
+</html>

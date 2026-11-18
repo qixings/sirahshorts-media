@@ -333,3 +333,25 @@ Done: posting time moved to 9 PM
 ```
 Leave out any line that has nothing to say. Every failure anywhere: one line, "🚨 <what failed>. <what to do>", then
 stop. Never post anything you have not checked frame by frame.
+
+## Step 11. Update the office page (Sirah Shorts HQ)
+
+Rony watches the team on a pixel-art page (`state.office.url`). Each automation job is a worker at a desk, listed in
+`state.office.workers` (id, name, emoji, color, hair, schedule, steps). Keep it current:
+- At the start of the run (right after Step 0), and again at the end (after Step 10), write the whole document
+  `state.office.doc` to the artifact `state.office.artifact_slug` with the claude-artifacts tools: db_get it for its
+  version, then db_write op "set" with ifVersion. If those tools are not available in this session, skip this step
+  silently; it is never an alert.
+- Document shape: {updated_at (ISO, +05:30), followers {instagram, facebook, youtube} from Step 2, next_posts
+  [{title, when}] for the next scheduled episodes (when like "Sat 21 Nov, 8:00 PM"), needs_you [short strings for every
+  open 🚨 or "Needs you" item], workers [each worker from state.office.workers plus: status, task, last_active]}.
+- status per worker: at the start of the run, "working" for every worker whose steps run today (task = what it is
+  about to do, last_active = now); at the end, "done" with task = one short line of what it did (e.g. "Made Musa
+  Part 4, posts Sat 8 PM") and last_active = when it finished; "needs_you" with task = what Rony must do; "sleeping"
+  with task = its normal job description for workers not on shift today. Publisher's last_active is the time of the
+  latest episode that went live.
+- NEW AUTOMATIONS GET A NEW WORKER: whenever a new job is added to this runbook (by Rony or by Claude), add a worker
+  to `state.office.workers` with a new id, a fitting emoji, a distinct shirt color, a hair color, its schedule, the
+  steps it covers and `added` = today. The page shows "NEW" over that desk for 3 days. Never remove a worker unless
+  its job is removed.
+

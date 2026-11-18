@@ -263,5 +263,82 @@
   "comments": {
     "seen": [],
     "replied": 0
+  },
+  "office": {
+    "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
+    "url": "https://claude.ai/artifact/EebsoP4GZTCVXuphrzUvYn",
+    "doc": "office/status",
+    "workers": [
+      {
+        "id": "animator",
+        "name": "Animator",
+        "emoji": "🎬",
+        "color": "#e0794f",
+        "hair": "#3b2618",
+        "schedule": "Daily 11:27 AM",
+        "steps": "5-8",
+        "added": "2026-11-19"
+      },
+      {
+        "id": "publisher",
+        "name": "Publisher",
+        "emoji": "📤",
+        "color": "#4f8fe0",
+        "hair": "#1d1d24",
+        "schedule": "Every post time",
+        "steps": "9",
+        "added": "2026-11-19"
+      },
+      {
+        "id": "community",
+        "name": "Community",
+        "emoji": "💬",
+        "color": "#5cc28a",
+        "hair": "#5a3a22",
+        "schedule": "Daily",
+        "steps": "2b",
+        "added": "2026-11-19"
+      },
+      {
+        "id": "reporter",
+        "name": "Reporter",
+        "emoji": "📊",
+        "color": "#b07be0",
+        "hair": "#2b1a10",
+        "schedule": "Daily",
+        "steps": "1,1b,2,10",
+        "added": "2026-11-19"
+      },
+      {
+        "id": "researcher",
+        "name": "Researcher",
+        "emoji": "🔎",
+        "color": "#e0c24f",
+        "hair": "#111111",
+        "schedule": "Fridays",
+        "steps": "3b",
+        "added": "2026-11-19"
+      },
+      {
+        "id": "outreach",
+        "name": "Outreach",
+        "emoji": "✉️",
+        "color": "#e05c8f",
+        "hair": "#3d2b1f",
+        "schedule": "Mondays",
+        "steps": "9b",
+        "added": "2026-11-19"
+      },
+      {
+        "id": "editor",
+        "name": "Editor",
+        "emoji": "🎞️",
+        "color": "#4fd0d8",
+        "hair": "#20160f",
+        "schedule": "Sundays",
+        "steps": "9c",
+        "added": "2026-11-19"
+      }
+    ]
   }
 }
