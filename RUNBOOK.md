@@ -180,6 +180,9 @@ For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profi
   exact caption), then INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH (max_wait_seconds 240), verify with INSTAGRAM_GET_IG_MEDIA,
   skip if a Reel with the same caption opening already exists, then send a Telegram message to chat 8722468322:
   "✅ <title> live: IG <permalink> · YT https://youtube.com/shorts/<id>" or a 🚨 alert on failure.
+  Right after the Reel is live, the task also shares it to the Instagram Story: INSTAGRAM_POST_IG_USER_MEDIA with
+  media_type "STORIES" and the same video_url (no caption), then INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH. A failed Story
+  is not an alert, just note it in the Telegram line.
   The same task also uploads to YouTube (account youtube_clam-adrip): in COMPOSIO_REMOTE_WORKBENCH skip if a video
   with the same title opening exists (YOUTUBE_LIST_CHANNEL_VIDEOS mine true), else download the raw video URL,
   upload_local_file() to get an s3key, YOUTUBE_MULTIPART_UPLOAD_VIDEO with title
