@@ -38,6 +38,17 @@ and pass the `account` ids from `state.json` when executing tools.
 COMPOSIO_MANAGE_CONNECTIONS action "list" for instagram, facebook, telegram, elevenlabs, github. If any is not active,
 send a 🚨 Telegram alert naming the service and saying "open Claude, ask it to reconnect <service>", then stop.
 
+## Step 1b. Read Rony's Telegram messages
+
+TELEGRAM_GET_UPDATES with offset = `telegram.last_update_id` + 1 (omit if not set). Only messages whose chat id is
+8722468322 count; ignore everything else. Save the highest update_id to `telegram.last_update_id`.
+Treat his messages as instructions for this account and apply them in this run, for example: pause or resume posting,
+skip a day, change the posting time, change the next topic or the plan order, fix a caption, switch voice (after he says
+he upgraded ElevenLabs), make the next video shorter or longer. Record each one in `state.instructions_log` with the date.
+If he asks for something that cannot be undone or reaches outside this account (deleting posts, spending money, other
+accounts), do not do it; tell him to ask in the Claude app. If `state.paused` is true, do only Steps 1, 1b, 2 and 10.
+Acknowledge what you did with one short line in the report (for example "Done: posting time moved to 9 PM").
+
 ## Step 2. Check yesterday and collect stats
 
 - For every episode with status "scheduled" whose date and time have passed: confirm it is live.
@@ -161,13 +172,12 @@ When the plan has 5 or fewer items left, append the next parts for the next prop
 Sulaiman, Isa, then Muhammad ﷺ, whose Sirah gives the account its name) and say so in the report.
 Commit and push state.json.
 
-Send one Telegram message (TELEGRAM_SEND_MESSAGE, chat_id 8722468322, plain text, no parse_mode):
+Send one Telegram message (TELEGRAM_SEND_MESSAGE, chat_id 8722468322, plain text, no parse_mode).
+Rony wants it short: 2 to 4 lines, no explanations. Example:
 ```
-🎬 New episode ready: Prophet <Name>, Part <N>: <Title>
-🗓 Posting <weekday date>, <time> IST on Instagram + Facebook
-📊 Yesterday: <views> views, <likes> likes on <title> (or "stats not available yet")
-👥 Followers: <n>
-<any time change, or anything that needs attention>
+✅ Musa Part 4 ready, posts Sat 8 PM
+📊 Part 2: 1.2k views, 85 likes · 👥 140 followers
+Done: posting time moved to 9 PM
 ```
-Every failure anywhere: send "🚨 <what failed>, <what Rony should do>" and stop. Never post anything you have not
-checked frame by frame.
+Leave out any line that has nothing to say. Every failure anywhere: one line, "🚨 <what failed>. <what to do>", then
+stop. Never post anything you have not checked frame by frame.
