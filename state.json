@@ -25,11 +25,11 @@
   },
   "elevenlabs": {
     "composio_account": "elevenlabs_glory-amapa",
-    "voice_id": "JBFqnCBsd6RMkjVDRZzb",
-    "voice_name": "George - Warm, Captivating Storyteller",
+    "voice_id": "8TMmdpPgqHKvDOGYP2lN",
+    "voice_name": "Gregory Grumble",
     "model_id": "eleven_multilingual_v2",
-    "plan": "free",
-    "note": "Free plan cannot use library voices via API. When the user upgrades, switch voice_id to Gregory Grumble 8TMmdpPgqHKvDOGYP2lN (Parts 2-3 voice) or Grandfather Joe 0lp4RIz96WD1RUtvEu3Q (Part 1 voice)."
+    "plan": "ElevenAPI Starter (75,000 characters/month), since 2026-11-19",
+    "note": "Gregory tested OK via API on 2026-11-19. The API key lacks user_read, so subscription/quota checks return 401; that is not an error. Only 401/402 on TEXT_TO_SPEECH matters."
   },
   "posting": {
     "default_time_ist": "20:00",
