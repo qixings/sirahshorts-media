@@ -23,6 +23,21 @@ Update it and push it at the end of every run.
 4. No music. No sound effects. Voice only.
 5. No em dashes between words in captions or on-screen text; use commas.
 
+## Growth rules (apply to every episode)
+
+Distilled from Instagram's public ranking guidance (via the MIT-licensed sergebulaev/instagram-skills reference notes).
+- Reels are ranked mostly on retention, shares (sends) and saves; likes matter little. Write for "would someone send this
+  to a friend or save it?"
+- The first 3 seconds decide the push. The spoken hook starts at 0.4s; the first frame must already show the scene of
+  the hook, not a plain title screen. Keep the series title small at the top during the first 3 seconds.
+- Keep every scene moving (camera push, parallax, particles); no static frame longer than about 2 seconds.
+- Caption: the hook must work inside the first 125 characters (that is all people see before "more"). 3 to 5 sized
+  hashtags only, never a wall of tags.
+- No engagement bait ("comment YES", "tag 3 friends", "like if"). A soft save or share line is fine, for example
+  "Save this to tell your kids" or "Send this to someone who loves these stories", used on about every other episode.
+- Original audio only (the narration), no watermarks from other apps.
+- Do not auto-reply to comments. In the report, mention if there are new comments worth answering.
+
 ## Step 0. Set up
 
 ```bash
