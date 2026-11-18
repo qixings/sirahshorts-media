@@ -53,7 +53,8 @@
       "ig_permalink": "https://www.instagram.com/reel/Df4LClWn-t4/",
       "fb_video_id": "2633000833832113",
       "voice": "Grandfather Joe (manual)",
-      "yt_video_id": "2Yx_4k1l7Uw"
+      "yt_video_id": "2Yx_4k1l7Uw",
+      "pin_id": "228135537373699979"
     },
     {
       "n": 2,
@@ -233,5 +234,21 @@
     "playlists": {
       "Musa": "PLZ_eT7sWEYTQ"
     }
-  }
+  },
+  "pinterest": {
+    "composio_account": "pinterest_rasher-jato",
+    "username": "sirahshorts",
+    "board_id": "228135606063555213",
+    "board_name": "Stories of the Prophets"
+  },
+  "gmail": {
+    "composio_account": "gmail_melas-mong",
+    "address": "sirahshorts@gmail.com"
+  },
+  "outreach": {
+    "weekly_max": 5,
+    "contacted": [],
+    "rules": "Instagram Collab post proposal only, creators with a PUBLIC business email, one follow-up after 7 days, never the same creator twice."
+  },
+  "whatsapp_channel": "manual: Rony forwards the copy-ready text sent to Telegram"
 }

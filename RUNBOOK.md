@@ -1,6 +1,6 @@
 # Sirah Shorts daily runbook
 
-This repo is the home of the @sirahshorts Instagram account, the "Sirah Shorts" Facebook Page and the YouTube channel @sirah.shorts: short vertical videos
+This repo is the home of the @sirahshorts Instagram account, the "Sirah Shorts" Facebook Page, the YouTube channel @sirah.shorts and the Pinterest account sirahshorts: short vertical videos
 telling the stories of the prophets from the Qur'an. A scheduled task runs this runbook once a day, unattended.
 The owner (Rony) only reads Telegram updates. Follow every step in order. Never ask questions; when something needs him,
 send a Telegram alert that starts with 🚨 and says exactly what to do, then stop.
@@ -50,7 +50,7 @@ and pass the `account` ids from `state.json` when executing tools.
 
 ## Step 1. Health check
 
-COMPOSIO_MANAGE_CONNECTIONS action "list" for instagram, facebook, youtube, telegram, elevenlabs, github. If any is not active,
+COMPOSIO_MANAGE_CONNECTIONS action "list" for instagram, facebook, youtube, pinterest, telegram, elevenlabs, github. If any is not active,
 send a 🚨 Telegram alert naming the service and saying "open Claude, ask it to reconnect <service>", then stop.
 
 ## Step 1b. Read Rony's Telegram messages
@@ -192,7 +192,39 @@ For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profi
   Prophet <Name> playlist." Then YOUTUBE_ADD_VIDEO_TO_PLAYLIST with the prophet's playlist from
   state.youtube.playlists; when a new prophet starts, create the playlist first (YOUTUBE_CREATE_PLAYLIST, public,
   title "Prophet <Name> (AS) | Full Story in Parts") and save its id in state.json.
+  After YouTube, the same task pins the video on Pinterest (account pinterest_rasher-jato, board id in state.pinterest):
+  in COMPOSIO_REMOTE_WORKBENCH call PINTEREST_REGISTER_MEDIA (media_type video), POST the video bytes to the returned
+  upload_url as multipart/form-data with all upload_parameters as form fields plus the file, wait about 60 seconds, then
+  PINTEREST_CREATE_PIN with board_id, title "Prophet <Name> (AS) Part <N>: <Title>", a plain description (hook, summary,
+  refs, 4 hashtags), link = the YouTube Short URL, media_source {source_type "video_id", media_id,
+  cover_image_url "https://i.ytimg.com/vi/<youtube id>/hqdefault.jpg"}. If it fails with a 500, wait 60 seconds and try
+  once more. A failed Pin is not an alert, just note it in the Telegram line.
+  Finally the task sends a second Telegram message, the copy-ready WhatsApp Channel post, plain text only:
+  "<hook sentence> <emoji>\n\nProphet <Name> (AS), Part <N>: <Title>\n📖 Surah <refs>\n\n▶️ Watch: <YouTube Short URL>"
   Copy the structure of the Part 2 task (trigger trig_01C977M4TrrgREPWjP1XYqLt) for the prompt.
+
+## Step 9b. Weekly collab outreach (Mondays only)
+
+Only when today is Monday (IST). Rules: propose an Instagram Collab post only (we post one of our episodes and invite
+them as collaborator; they just tap Accept, nothing else is asked of them). Never ask them to record a voice or make
+anything. At most `state.outreach.weekly_max` (5) new creators per week, never anyone already in
+`state.outreach.contacted`.
+1. Find candidates: vidiq_instagram_account_discovery with niche "Islamic reminders, Quran and prophet stories, Islamic
+   history" and an audience line for English-speaking Muslims (Global: true), followers 5,000 to 150,000. Skip accounts
+   that are not clearly respectful Islamic content, that post music, or that look like large media companies.
+2. For each, read the public profile (vidiq_ig_profile, or SCRAPECREATORS_GET_INSTAGRAM_PROFILE) and use only a business
+   email the creator shows publicly in their bio or contact button. No email shown: skip them. Never guess emails.
+3. Send from sirahshorts@gmail.com with GMAIL_SEND_EMAIL (account gmail_melas-mong), plain text, short and personal:
+   subject "Collab idea: Stories of the Prophets x @<handle>"; mention one specific thing about their content; one line
+   on Sirah Shorts (illustrated stories of the prophets from the Qur'an, no prophet or person ever depicted); the offer:
+   "we'd post our next episode as an Instagram Collab with you, you would only need to tap Accept, and it shows on both
+   profiles"; link to one of our Reels; sign "Rony, Sirah Shorts". No attachments, no pressure, no follow-up promises.
+4. Add each to `state.outreach.contacted` with handle, email, date, status "sent".
+5. Every run (any weekday): search Gmail (GMAIL_FETCH_EMAILS, query "to:sirahshorts@gmail.com newer_than:2d") for
+   replies from contacted creators; mark them "replied" and tell Rony in the report: "📩 @handle replied about a collab".
+   Send one polite follow-up 7 days after "sent" if there is no reply, then mark "closed". When a creator agrees, add
+   their handle to the next episode's Instagram post as a collaborator if the Composio tool supports it, otherwise tell
+   Rony to add them in the app.
 
 ## Step 10. Save state and report
 
