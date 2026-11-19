@@ -239,7 +239,24 @@
       "beats": "Build the ark under Our eyes; they mock; the oven gushes; pairs of every kind; his son refuses; the flood; it rests on Al-Judi."
     }
   ],
-  "stats": [],
+  "stats": [
+    {
+      "date": "2026-11-19",
+      "time_ist": "11:30",
+      "episode": "musa-part1",
+      "ig_media_id": "18658667887032286",
+      "views": 175,
+      "reach": 137,
+      "likes": 4,
+      "comments": 0,
+      "shares": 0,
+      "saved": 2,
+      "ig_followers": 3,
+      "yt_views": "unavailable",
+      "yt_subscribers": "unavailable",
+      "note": "YouTube API quota exceeded at run time; YT comments returned 403"
+    }
+  ],
   "paused": false,
   "instructions_log": [],
   "report_style": "short: 2 to 4 lines, no explanations",
