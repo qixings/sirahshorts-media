@@ -1,0 +1,106 @@
+{
+ "title": "Musa, Part 4: The Fire on the Mountain",
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "On a cold, dark night, Musa saw a fire on the side of Mount Tur.",
+     "spoken": "On a cold, dark night, Musa saw a fire on the side of Mount Toor.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 2,
+     "text": "He told his family, \"Wait here. I may bring you a flame, or find guidance there.\"",
+     "spoken": "He told his family, \"Wait here. I may bring you a flame, or find guidance there.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 3,
+     "text": "When he came near, he was called from the blessed valley.",
+     "spoken": "When he came near, he was called from the blessed valley.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 4,
+     "text": "\"O Musa, I am your Lord. Remove your sandals. You are in the sacred valley of Tuwa.\"",
+     "spoken": "\"O Musa, I am your Lord. Remove your sandals. You are in the sacred valley of Too-wa.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 5,
+     "text": "\"What is in your right hand?\" \"My staff,\" he said.",
+     "spoken": "\"What is in your right hand?\" \"My staff,\" he said.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 6,
+     "text": "\"Throw it down.\" And the staff became a living serpent, moving fast.",
+     "spoken": "\"Throw it down.\" And the staff became a living serpent, moving fast.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 7,
+     "text": "\"Take it, and do not fear. We will return it as it was.\"",
+     "spoken": "\"Take it, and do not fear. We will return it as it was.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 8,
+     "text": "Then his hand came out shining white, without any harm.",
+     "spoken": "Then his hand came out shining white, without any harm.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 9,
+     "text": "\"Go to Pharaoh. He has crossed all limits.\"",
+     "spoken": "\"Go to Pharaoh. He has crossed all limits.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 10,
+     "text": "Musa prayed: \"My Lord, open my chest, ease my task, and make my brother Harun my helper.\"",
+     "spoken": "Musa prayed: \"My Lord, open my chest, ease my task, and make my brother Haaroon my helper.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 11,
+     "text": "\"Your request is granted, O Musa.\"",
+     "spoken": "\"Your request is granted, O Musa.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 12,
+     "text": "Now he must stand before Pharaoh. Follow for Part 5.",
+     "spoken": "Now he must stand before Pharaoh. Follow for Part five.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.3
+    }
+   ]
+  }
+ ]
+}

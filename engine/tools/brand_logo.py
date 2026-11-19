@@ -24,6 +24,6 @@ fc = (f"[1:v]scale={s}:{s},format=rgba,fade=in:st={st}:d=0.6:alpha=1[lg];"
       f"[0:v][sh]overlay=(W-w)/2:H*{a.y}-h/2:enable='gte(t,{st})'[v1];"
       f"[v1][lg]overlay=(W-w)/2:H*{a.y}-h/2:enable='gte(t,{st})'[v]")
 subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", a.src, "-loop", "1", "-t", str(dur), "-i", LOGO,
-                "-filter_complex", fc, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "veryfast",
-                "-crf", "27", "-tune", "grain", "-c:a", "copy", "-movflags", "+faststart", "-shortest", a.out], check=True)
+                "-filter_complex", fc, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-preset", "slow",
+                "-crf", "27", "-tune", "grain", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", "-shortest", a.out], check=True)
 print(a.out)
