@@ -177,7 +177,7 @@ Join the `spoken` lines with a blank line between them. In COMPOSIO_REMOTE_WORKB
 ```python
 import base64, requests
 res, err = run_composio_tool("ELEVENLABS_TEXT_TO_SPEECH", {"voice_id": VOICE_ID, "text": TEXT, "model_id": "eleven_multilingual_v2",
-    "voice_settings": {"stability": 0.55, "similarity_boost": 0.75, "style": 0.0}}, account=ELEVEN_ACCOUNT)
+    "voice_settings": {"stability": 0.5, "similarity_boost": 0.56, "style": 0.0, "speed": 1.0}}, account=ELEVEN_ACCOUNT)
 b = requests.get(res["data"]["file"]["s3url"], timeout=60).content
 r, e = proxy_execute("PUT", f"/repos/qixings/sirahshorts-media/contents/episodes/{SLUG}/vo.mp3", "github",
     body={"message": f"Voice for {SLUG}", "content": base64.b64encode(b).decode()})

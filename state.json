@@ -29,7 +29,14 @@
     "voice_name": "Gregory Grumble",
     "model_id": "eleven_multilingual_v2",
     "plan": "ElevenAPI Starter (75,000 characters/month), since 2026-11-19",
-    "note": "Gregory tested OK via API on 2026-11-19. The API key lacks user_read, so subscription/quota checks return 401; that is not an error. Only 401/402 on TEXT_TO_SPEECH matters."
+    "note": "Gregory tested OK via API on 2026-11-19. The API key lacks user_read, so subscription/quota checks return 401; that is not an error. Only 401/402 on TEXT_TO_SPEECH matters.",
+    "voice_settings": {
+      "stability": 0.5,
+      "similarity_boost": 0.56,
+      "style": 0.0,
+      "speed": 1.0,
+      "note": "Rony's settings from the ElevenLabs app (Stability 50%, Similarity 56%, speed 1x), set 2026-11-19"
+    }
   },
   "posting": {
     "default_time_ist": "20:00",
