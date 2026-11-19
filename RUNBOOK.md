@@ -48,6 +48,30 @@ Distilled from Instagram's public ranking guidance (via the MIT-licensed sergebu
 - Original audio only (the narration), no watermarks from other apps.
 - Reply to comments only as Step 2b allows. Never answer religious rulings or debates automatically.
 
+## Telegram message format (every message to Rony)
+
+Rony asked on 2026-11-19 for formatted messages. Send every Telegram message (daily report, 🚨 alerts, 💬 Needs you,
+✅ live lines) with TELEGRAM_SEND_MESSAGE `parse_mode` "HTML", using a mix of bold, italic and monochrome:
+- Header line in bold, date in italic, then a divider line in monochrome: `<code>========================</code>`.
+- Section labels in `<b>…</b>`, short descriptions in `<i>…</i>`, numbers, links and ids in `<code>…</code>`.
+- Put a divider between sections and at the end. Still short: 2 to 4 content lines.
+- Escape `&`, `<`, `>` in any text that is not a tag (`&amp;`, `&lt;`, `&gt;`), e.g. in comment text.
+- Exception: the copy-ready WhatsApp Channel post stays plain text (no parse_mode) so he can copy it as is.
+Example daily report:
+```
+<b>🌙 SIRAH SHORTS · DAILY REPORT</b>
+<i>Thu 19 Nov 2026</i>
+<code>========================</code>
+<b>✅ Today</b>
+<i>Musa Part 5 ready, posts Sun 8 PM</i>
+<code>========================</code>
+<b>📊 Part 2</b>
+<code>1.2k views · 85 likes · 4 saves</code>
+<b>👥 Followers:</b> <code>IG 140</code>
+<code>========================</code>
+```
+Example alert: `<b>🚨 ALERT</b>\n<code>========================</code>\n<b>What:</b> <i>…</i>\n<b>Do:</b> <i>…</i>\n<code>========================</code>`
+
 ## Step 0. Set up
 
 ```bash
@@ -251,8 +275,9 @@ For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profi
   initiation "human_schedule", notifications push) whose prompt publishes the Reel: Composio
   INSTAGRAM_POST_IG_USER_MEDIA (ig_user_id "me", media_type REELS, share_to_feed true, thumb_offset 2500, video_url,
   exact caption), then INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH (max_wait_seconds 240), verify with INSTAGRAM_GET_IG_MEDIA,
-  skip if a Reel with the same caption opening already exists, then send a Telegram message to chat 8722468322:
-  "✅ <title> live: IG <permalink> · YT https://youtube.com/shorts/<id>" or a 🚨 alert on failure.
+  skip if a Reel with the same caption opening already exists, then send a Telegram message to chat 8722468322
+  (parse_mode "HTML", the house format): bold "✅ <title> LIVE", divider, IG and YT links in <code>, divider; or a 🚨
+  alert in the same format on failure.
   Right after the Reel is live, the task also shares it to the Instagram Story: INSTAGRAM_POST_IG_USER_MEDIA with
   media_type "STORIES" and the same video_url (no caption), then INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH. A failed Story
   is not an alert, just note it in the Telegram line.
@@ -272,7 +297,7 @@ For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profi
   refs, 4 hashtags), link = the YouTube Short URL, media_source {source_type "video_id", media_id,
   cover_image_url "https://i.ytimg.com/vi/<youtube id>/hqdefault.jpg"}. If it fails with a 500, wait 60 seconds and try
   once more. A failed Pin is not an alert, just note it in the Telegram line.
-  Finally the task sends a second Telegram message, the copy-ready WhatsApp Channel post, plain text only:
+  Finally the task sends a second Telegram message, the copy-ready WhatsApp Channel post, plain text only (no parse_mode):
   "<hook sentence> <emoji>\n\nProphet <Name> (AS), Part <N>: <Title>\n📖 Surah <refs>\n\n▶️ Watch: <YouTube Short URL>"
   Copy the structure of the Part 2 task (trigger trig_01C977M4TrrgREPWjP1XYqLt) for the prompt.
 
@@ -338,34 +363,13 @@ When the plan has 5 or fewer items left, append the next parts for the next prop
 Sulaiman, Isa, then Muhammad ﷺ, whose Sirah gives the account its name) and say so in the report.
 Commit and push state.json.
 
-Send one Telegram message (TELEGRAM_SEND_MESSAGE, chat_id 8722468322, plain text, no parse_mode).
-Rony wants it short: 2 to 4 lines, no explanations. Example:
-```
-✅ Musa Part 4 ready, posts Sat 8 PM
-📊 Part 2: 1.2k views, 85 likes · 👥 140 followers
-Done: posting time moved to 9 PM
-```
+Send one Telegram message (TELEGRAM_SEND_MESSAGE, chat_id 8722468322, parse_mode "HTML", in the format from
+"Telegram message format" above).
+Rony wants it short: 2 to 4 content lines, no explanations (see the example in "Telegram message format").
 Leave out any line that has nothing to say. Every failure anywhere: one line, "🚨 <what failed>. <what to do>", then
 stop. Never post anything you have not checked frame by frame.
 
-## Step 11. Update the office page (Sirah Shorts HQ)
+## Step 11. Office page (PAUSED)
 
-Rony watches the team on a pixel-art page (`state.office.url`). Each automation job is a worker at a desk, listed in
-`state.office.workers` (id, name, emoji, color, hair, schedule, steps). Keep it current:
-- At the start of the run (right after Step 0), and again at the end (after Step 10), write the whole document
-  `state.office.doc` to the artifact `state.office.artifact_slug` with the claude-artifacts tools: db_get it for its
-  version, then db_write op "set" with ifVersion. If those tools are not available in this session, skip this step
-  silently; it is never an alert.
-- Document shape: {updated_at (ISO, +05:30), followers {instagram, facebook, youtube} from Step 2, next_posts
-  [{title, when}] for the next scheduled episodes (when like "Sat 21 Nov, 8:00 PM"), needs_you [short strings for every
-  open 🚨 or "Needs you" item], workers [each worker from state.office.workers plus: status, task, last_active]}.
-- status per worker: at the start of the run, "working" for every worker whose steps run today (task = what it is
-  about to do, last_active = now); at the end, "done" with task = one short line of what it did (e.g. "Made Musa
-  Part 4, posts Sat 8 PM") and last_active = when it finished; "needs_you" with task = what Rony must do; "sleeping"
-  with task = its normal job description for workers not on shift today. Publisher's last_active is the time of the
-  latest episode that went live.
-- NEW AUTOMATIONS GET A NEW WORKER: whenever a new job is added to this runbook (by Rony or by Claude), add a worker
-  to `state.office.workers` with a new id, a fitting emoji, a distinct shirt color, a hair color, its schedule, the
-  steps it covers and `added` = today. The page shows "NEW" over that desk for 3 days. Never remove a worker unless
-  its job is removed.
-
+Paused by Rony on 2026-11-19: do not update the Sirah Shorts HQ artifact. Skip this step entirely until he
+asks to turn it back on. Keep `state.office` as it is.

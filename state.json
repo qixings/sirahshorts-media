@@ -6,7 +6,8 @@
     "chat_id": 8722468322,
     "composio_account": "telegram_hackle-scient",
     "bot": "@sirahshorts_updates_bot",
-    "last_update_id": 387765613
+    "last_update_id": 387765613,
+    "format": "HTML parse_mode: bold headers, italic text, <code> numbers, <code>========================</code> dividers (Rony, 2026-11-19). WhatsApp copy post stays plain."
   },
   "instagram": {
     "composio_account": "instagram_lite-clam",
@@ -258,7 +259,13 @@
     }
   ],
   "paused": false,
-  "instructions_log": [],
+  "instructions_log": [
+    {
+      "date": "2026-11-19",
+      "source": "Claude app",
+      "instruction": "Stop updating the Sirah Shorts HQ artifact for now; format Telegram messages with dividers, bold, italic and monochrome."
+    }
+  ],
   "report_style": "short: 2 to 4 lines, no explanations",
   "youtube": {
     "composio_account": "youtube_clam-adrip",
@@ -373,7 +380,8 @@
         "steps": "9c",
         "added": "2026-11-19"
       }
-    ]
+    ],
+    "paused": "2026-11-19: Rony said not to update the HQ artifact for now"
   },
   "brand": {
     "logo": "engine/core/brand/logo.png",
