@@ -73,11 +73,13 @@
       "video": "videos/musa-part2.mp4",
       "date": "2026-11-19",
       "time_ist": "20:00",
-      "status": "scheduled",
+      "status": "posted",
       "fb_video_id": "3064721327225915",
       "ig_trigger": "trig_01C977M4TrrgREPWjP1XYqLt",
       "voice": "Gregory Grumble (manual)",
-      "yt": "uploaded by the ig_trigger task at post time"
+      "yt": "uploaded by the ig_trigger task (channel videoCount 2); yt_video_id not read, YouTube API quota exceeded at run time",
+      "ig_media_id": "18117902339156332",
+      "ig_permalink": "https://www.instagram.com/reel/Df7TQ1YDlDe/"
     },
     {
       "n": 3,
@@ -256,6 +258,39 @@
       "yt_views": "unavailable",
       "yt_subscribers": "unavailable",
       "note": "YouTube API quota exceeded at run time; YT comments returned 403"
+    },
+    {
+      "date": "2026-11-20",
+      "time_ist": "11:30",
+      "ig_followers": 3,
+      "yt_views": 1861,
+      "yt_subscribers": 11,
+      "episode": "musa-part1",
+      "ig_media_id": "18658667887032286",
+      "views": 177,
+      "reach": 138,
+      "likes": 4,
+      "comments": 0,
+      "shares": 0,
+      "saved": 2,
+      "note": "yt_views/subscribers are channel totals"
+    },
+    {
+      "date": "2026-11-20",
+      "time_ist": "11:30",
+      "ig_followers": 3,
+      "yt_views": 1861,
+      "yt_subscribers": 11,
+      "episode": "musa-part2",
+      "ig_media_id": "18117902339156332",
+      "views": 150,
+      "reach": 116,
+      "likes": 6,
+      "comments": 2,
+      "shares": 1,
+      "saved": 0,
+      "fb": "live, 1 comment",
+      "note": "yt_views/subscribers are channel totals; YT video list/comments quota exceeded"
     }
   ],
   "paused": false,
@@ -302,8 +337,13 @@
   },
   "long_videos": [],
   "comments": {
-    "seen": [],
-    "replied": 0
+    "seen": [
+      "17881473114562674",
+      "18036714812906962",
+      "122104347483547769_29528396870089325"
+    ],
+    "replied": 2,
+    "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen."
   },
   "office": {
     "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
