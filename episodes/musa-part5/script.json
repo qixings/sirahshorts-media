@@ -1,0 +1,119 @@
+{
+ "title": "Musa, Part 5: Facing Pharaoh",
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "Allah sent Musa and Harun to Pharaoh, with a surprising command.",
+     "spoken": "Allah sent Musa and Haaroon to Pharaoh, with a surprising command.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 2,
+     "text": "\"Speak to him gently, so perhaps he will remember, or fear.\"",
+     "spoken": "\"Speak to him gently, so perhaps he will remember, or fear.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 3,
+     "text": "They said: \"Our Lord, we fear he will harm us.\"",
+     "spoken": "They said: \"Our Lord, we fear he will harm us.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 4,
+     "text": "\"Do not fear,\" Allah said. \"I am with you both, I hear and I see.\"",
+     "spoken": "\"Do not fear,\" Allah said. \"I am with you both, I hear and I see.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 5,
+     "text": "They told Pharaoh: \"We are your Lord's messengers. Let the Children of Israel go with us.\"",
+     "spoken": "They told Pharaoh: \"We are your Lord's messengers. Let the Children of Israel go with us.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 6,
+     "text": "Pharaoh said: \"Did we not raise you among us as a child?\"",
+     "spoken": "Pharaoh said: \"Did we not raise you among us as a child?\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 7,
+     "text": "\"So who is your Lord, Musa?\" he asked.",
+     "spoken": "\"So who is your Lord, Musa?\" he asked.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 8,
+     "text": "Musa said: \"Our Lord gave everything its form, then guided it.\"",
+     "spoken": "Musa said: \"Our Lord gave everything its form, then guided it.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 9,
+     "text": "Pharaoh threatened: \"Take a god other than me, and I will imprison you.\"",
+     "spoken": "Pharaoh threatened: \"Take a god other than me, and I will imprison you.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 10,
+     "text": "Musa threw his staff, and it became an unmistakable serpent.",
+     "spoken": "Musa threw his staff, and it became an unmistakable serpent.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 11,
+     "text": "He drew out his hand, and it shone white for all to see.",
+     "spoken": "He drew out his hand, and it shone white for all to see.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 12,
+     "text": "Allah showed Pharaoh all His signs, yet he denied and refused.",
+     "spoken": "Allah showed Pharaoh all His signs, yet he denied and refused.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 13,
+     "text": "What would he do next? Follow for Part 6.",
+     "spoken": "What would he do next? Follow for Part six.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ],
+ "fact_notes": [
+  "Quran 20:42-56 and 26:16-33 (Sahih International checked 2026-11-21)",
+  "Line 1: 20:42-43; 2: 20:44; 3: 20:45; 4: 20:46; 5: 20:47 and 26:16-17; 6: 26:18; 7: 20:49; 8: 20:50; 9: 26:29; 10: 26:32; 11: 26:33; 12: 20:56",
+  "Contest day (20:57-59) left for Part 6 so every line stays inside this episode's refs"
+ ]
+}
