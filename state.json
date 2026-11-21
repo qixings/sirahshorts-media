@@ -90,11 +90,14 @@
       "video": "videos/musa-part3.mp4",
       "date": "2026-11-20",
       "time_ist": "20:00",
-      "status": "scheduled",
+      "status": "posted",
       "fb_video_id": "1132944976144734",
       "ig_trigger": "trig_0111bsNzuwCve64J34rz5G9K",
       "voice": "Gregory Grumble (manual)",
-      "yt": "uploaded by the ig_trigger task at post time"
+      "yt": "posted",
+      "ig_media_id": "18102274724101809",
+      "ig_permalink": "https://www.instagram.com/reel/Df94CRJghvN/",
+      "yt_video_id": "Zs8m-aj4LdI"
     },
     {
       "n": 4,
@@ -112,16 +115,26 @@
       "ai_shot": "Anime remake 2026-11-19: 5 Higgsfield Soul v2 stills (camp, valley, staff, palace, hill) animated in engine/paint4a.py + 2 Seedance 2.5 clips (fire approach, staff to serpent). Old FB scheduled video 1679247817048400 deleted.",
       "yt": "uploaded by the ig_trigger task at post time",
       "style": "anime"
-    }
-  ],
-  "plan": [
+    },
     {
+      "n": 5,
       "prophet": "Musa",
       "part": 5,
       "title": "Facing Pharaoh",
       "refs": "Taha 20:42-56; Ash-Shu'ara 26:16-33",
-      "beats": "Musa and Harun go to Pharaoh with gentle speech; Pharaoh reminds Musa he raised him; asks who is your Lord; the signs shown; Pharaoh calls it magic and sets a day of contest."
-    },
+      "video": "videos/musa-part5.mp4",
+      "date": "2026-11-22",
+      "time_ist": "20:00",
+      "status": "scheduled",
+      "fb_video_id": "1626867225831488",
+      "ig_trigger": "NOT CREATED: scheduled-task creation needs Rony's approval (blocked in unattended run 2026-11-21)",
+      "voice": "Gregory Grumble (API, stability 0.5, similarity 0.56)",
+      "style": "painted (engine)",
+      "duration_s": 62.3,
+      "ig_caption": "Speak gently, Allah said, even to Pharaoh 👑\n\nProphet Musa (AS), Part 5: Facing Pharaoh\nTwo brothers, one tyrant, and the signs he refused to believe.\n📖 Surah Taha 20:42-56, Surah Ash-Shu'ara 26:16-33\n\nNew here? Start with Part 1, pinned on our profile.\nFollow @sirahshorts for Part 6 🐍\n\n#ProphetMusa #StoriesOfTheProphets #IslamicHistory #QuranStories #Islam"
+    }
+  ],
+  "plan": [
     {
       "prophet": "Musa",
       "part": 6,
@@ -291,6 +304,54 @@
       "saved": 0,
       "fb": "live, 1 comment",
       "note": "yt_views/subscribers are channel totals; YT video list/comments quota exceeded"
+    },
+    {
+      "date": "2026-11-21",
+      "time_ist": "15:10",
+      "ig_followers": 3,
+      "yt_views": 1941,
+      "yt_subscribers": 16,
+      "episode": "musa-part1",
+      "ig_media_id": "18658667887032286",
+      "views": 179,
+      "reach": 139,
+      "likes": 4,
+      "comments": 0,
+      "shares": 0,
+      "saved": 2,
+      "note": "yt_views/subscribers are channel totals"
+    },
+    {
+      "date": "2026-11-21",
+      "time_ist": "15:10",
+      "ig_followers": 3,
+      "yt_views": 1941,
+      "yt_subscribers": 16,
+      "episode": "musa-part2",
+      "ig_media_id": "18117902339156332",
+      "views": 179,
+      "reach": 135,
+      "likes": 6,
+      "comments": 4,
+      "shares": 1,
+      "saved": 0,
+      "note": "yt_views/subscribers are channel totals"
+    },
+    {
+      "date": "2026-11-21",
+      "time_ist": "15:10",
+      "ig_followers": 3,
+      "yt_views": 1941,
+      "yt_subscribers": 16,
+      "episode": "musa-part3",
+      "ig_media_id": "18102274724101809",
+      "views": 144,
+      "reach": 125,
+      "likes": 7,
+      "comments": 2,
+      "shares": 1,
+      "saved": 1,
+      "note": "yt_views/subscribers are channel totals"
     }
   ],
   "paused": false,
@@ -340,10 +401,17 @@
     "seen": [
       "17881473114562674",
       "18036714812906962",
-      "122104347483547769_29528396870089325"
+      "122104347483547769_29528396870089325",
+      "17969080802982399",
+      "18131399143849662",
+      "Ugxq5O2frmqbdnqJlb14AaABAg",
+      "UgyV8m-WipQGqAxD5BJ4AaABAg",
+      "UgykUfvQQYvtznDN9PV4AaABAg",
+      "UgzbzjIsDfCWNLF_fYt4AaABAg",
+      "122104347471547769_1140230691736111"
     ],
-    "replied": 2,
-    "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen."
+    "replied": 7,
+    "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored."
   },
   "office": {
     "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
