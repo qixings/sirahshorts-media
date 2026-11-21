@@ -112,13 +112,17 @@
    "video": "videos/musa-part4.mp4",
    "date": "2026-11-21",
    "time_ist": "20:00",
-   "status": "scheduled",
+   "status": "posted",
    "fb_video_id": "1921187095729305",
    "ig_trigger": "trig_01D5vttb546WbAYu4ev5TutS",
    "voice": "Gregory Grumble (API, stability 0.5, similarity 0.56)",
    "ai_shot": "Anime remake 2026-11-19: 5 Higgsfield Soul v2 stills (camp, valley, staff, palace, hill) animated in engine/paint4a.py + 2 Seedance 2.5 clips (fire approach, staff to serpent). Old FB scheduled video 1679247817048400 deleted.",
    "yt": "uploaded by the ig_trigger task at post time",
-   "style": "anime"
+   "style": "anime",
+   "ig_media_id": "17958760077277917",
+   "ig_permalink": "https://www.instagram.com/reel/DgAc8cXiOYY/",
+   "yt_video_id": "5Ya5Wp3aha0",
+   "pin_id": "228135537373832803"
   },
   {
    "n": 5,
