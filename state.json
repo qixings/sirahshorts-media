@@ -140,16 +140,27 @@
    "style": "painted (engine)",
    "duration_s": 62.3,
    "ig_caption": "Speak gently, Allah said, even to Pharaoh 👑\n\nProphet Musa (AS), Part 5: Facing Pharaoh\nTwo brothers, one tyrant, and the signs he refused to believe.\n📖 Surah Taha 20:42-56, Surah Ash-Shu'ara 26:16-33\n\nNew here? Start with Part 1, pinned on our profile.\nFollow @sirahshorts for Part 6 🐍\n\n#ProphetMusa #StoriesOfTheProphets #IslamicHistory #QuranStories #Islam"
-  }
- ],
- "plan": [
+  },
   {
+   "n": 6,
    "prophet": "Musa",
    "part": 6,
    "title": "The Magicians",
    "refs": "Taha 20:57-73; Al-A'raf 7:113-126",
-   "beats": "The festival day; magicians throw ropes and staffs that seem to move; Musa feels fear and is told not to fear; his staff swallows what they made; the magicians fall in prostration and believe; Pharaoh threatens them and they stand firm."
-  },
+   "video": "videos/musa-part6.mp4",
+   "date": "2026-11-23",
+   "time_ist": "20:00",
+   "status": "scheduled",
+   "fb_video_id": "1483241680331602",
+   "ig_trigger": null,
+   "ig_trigger_note": "Not created: this unattended run may not create scheduled tasks. Prompt saved in episodes/musa-part6/post_task.md; Rony alerted to have it created in the Claude app.",
+   "voice": "Gregory Grumble (API, stability 0.5, similarity 0.56)",
+   "style": "painted (engine)",
+   "duration_s": 66.5,
+   "ig_caption": "The magicians came to beat Musa, and left as believers ✨\n\nProphet Musa (AS), Part 6: The Magicians\nRopes that seemed to move, a staff that swallowed them all, and a faith no threat could break.\n📖 Surah Taha 20:57-73, Surah Al-A'raf 7:113-126\n\nSend this to someone who loves these stories.\nNew here? Start with Part 1, pinned on our profile.\nFollow @sirahshorts for Part 7 🌾\n\n#ProphetMusa #StoriesOfTheProphets #IslamicHistory #QuranStories #Islam"
+  }
+ ],
+ "plan": [
   {
    "prophet": "Musa",
    "part": 7,
@@ -360,6 +371,70 @@
    "shares": 1,
    "saved": 1,
    "note": "yt_views/subscribers are channel totals"
+  },
+  {
+   "date": "2026-11-22",
+   "time_ist": "11:30",
+   "ig_followers": 3,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part1",
+   "ig_media_id": "18658667887032286",
+   "views": 179,
+   "reach": 139,
+   "likes": 4,
+   "comments": 0,
+   "shares": 0,
+   "saved": 2,
+   "note": "YouTube API quota exceeded at run time"
+  },
+  {
+   "date": "2026-11-22",
+   "time_ist": "11:30",
+   "ig_followers": 3,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part2",
+   "ig_media_id": "18117902339156332",
+   "views": 182,
+   "reach": 138,
+   "likes": 6,
+   "comments": 4,
+   "shares": 1,
+   "saved": 0,
+   "note": "YouTube API quota exceeded at run time"
+  },
+  {
+   "date": "2026-11-22",
+   "time_ist": "11:30",
+   "ig_followers": 3,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part3",
+   "ig_media_id": "18102274724101809",
+   "views": 159,
+   "reach": 135,
+   "likes": 7,
+   "comments": 4,
+   "shares": 1,
+   "saved": 2,
+   "note": "YouTube API quota exceeded at run time"
+  },
+  {
+   "date": "2026-11-22",
+   "time_ist": "11:30",
+   "ig_followers": 3,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part4",
+   "ig_media_id": "17958760077277917",
+   "views": 130,
+   "reach": 104,
+   "likes": 5,
+   "comments": 1,
+   "shares": 0,
+   "saved": 0,
+   "note": "YouTube API quota exceeded at run time"
   }
  ],
  "paused": false,
@@ -416,10 +491,11 @@
    "UgyV8m-WipQGqAxD5BJ4AaABAg",
    "UgykUfvQQYvtznDN9PV4AaABAg",
    "UgzbzjIsDfCWNLF_fYt4AaABAg",
-   "122104347471547769_1140230691736111"
+   "122104347471547769_1140230691736111",
+   "18120139805064346"
   ],
-  "replied": 7,
-  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored."
+  "replied": 8,
+  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded)."
  },
  "office": {
   "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
