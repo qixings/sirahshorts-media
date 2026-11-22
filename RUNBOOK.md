@@ -278,9 +278,16 @@ For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profi
 
 - Facebook: FACEBOOK_PUBLISH_PAGE_REEL with page_id, file_url = raw URL, video_state "SCHEDULED",
   scheduled_publish_time = Unix time of the target date and time (IST is UTC+5:30), is_ai_generated false.
-- YouTube is posted by the same one-time task as Instagram (YouTube has no scheduling tool here), see below.
-- Instagram + YouTube: create a one-time scheduled task (create_trigger, run_once_at "<date>T<time>:00[Asia/Calcutta]",
-  initiation "human_schedule", notifications push) whose prompt publishes the Reel: Composio
+- Instagram, Story, YouTube, Pinterest and the Telegram LIVE message: do NOT create a scheduled task (unattended runs
+  are not allowed to, since 22 Nov 2026). A separate recurring task, "Sirah Shorts 8 PM poster", runs every day at
+  the posting time and publishes every episode in state.json whose `date` is today and `status` is "scheduled".
+  So this run only has to save, in the episode entry: `ig_caption` (exact), `hook` (the caption's first line),
+  `yt_title`, `yt_tags` (8 to 10), `pin_description`, `wa_text` (the WhatsApp post without the URL), and `video`.
+  The poster follows the procedure below ("## 8 PM poster").
+
+## 8 PM poster (run by the "Sirah Shorts 8 PM poster" task, not by the daily run)
+
+For each episode with `date` == today (IST) and `status` "scheduled", publish the Reel: Composio
   INSTAGRAM_POST_IG_USER_MEDIA (ig_user_id "me", media_type REELS, share_to_feed true, thumb_offset 2500, video_url,
   exact caption), then INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH (max_wait_seconds 240), verify with INSTAGRAM_GET_IG_MEDIA,
   skip if a Reel with the same caption opening already exists, then send a Telegram message to chat 8722468322
@@ -307,7 +314,11 @@ For Facebook replace "@sirahshorts" with "Sirah Shorts" and "pinned on our profi
   once more. A failed Pin is not an alert, just note it in the Telegram line.
   Finally the task sends a second Telegram message, the copy-ready WhatsApp Channel post, plain text only (no parse_mode):
   "<hook sentence> <emoji>\n\nProphet <Name> (AS), Part <N>: <Title>\n📖 Surah <refs>\n\n▶️ Watch: <YouTube Short URL>"
-  Copy the structure of the Part 2 task (trigger trig_01C977M4TrrgREPWjP1XYqLt) for the prompt.
+  When an older episode does not have `yt_title`, `yt_tags`, `pin_description` or `wa_text`, build them from its
+  title, refs and `ig_caption` in the formats above.
+  Finally set the episode's `status` to "posted" and save `ig_media_id`, `ig_permalink`, `yt_video_id`, `pin_id`;
+  commit and push state.json ("State: <slug> posted"). Every platform step skips itself if that post already exists,
+  so running twice never double-posts. If nothing is due today, do nothing and send nothing.
 
 ## Step 9b. Weekly collab outreach (Mondays only)
 
@@ -366,7 +377,8 @@ toward YouTube monetization, so every Sunday we join finished Shorts into one 16
 
 ## Step 10. Save state and report
 
-Move the plan item into `episodes` with date, time, status "scheduled", fb_video_id, ig_trigger (it also does YouTube), refs, video path.
+Move the plan item into `episodes` with date, time, status "scheduled", fb_video_id, refs, video path, and the posting
+fields from Step 9 (ig_caption, hook, yt_title, yt_tags, pin_description, wa_text). The 8 PM poster posts it.
 When the plan has 5 or fewer items left, append the next parts for the next prophet in the same style (Ibrahim, Yunus,
 Sulaiman, Isa, then Muhammad ﷺ, whose Sirah gives the account its name) and say so in the report.
 Commit and push state.json.
