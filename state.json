@@ -443,6 +443,11 @@
    "date": "2026-11-19",
    "source": "Claude app",
    "instruction": "Stop updating the Sirah Shorts HQ artifact for now; format Telegram messages with dividers, bold, italic and monochrome."
+  },
+  {
+   "date": "2026-11-22",
+   "source": "Claude app (new account)",
+   "instruction": "Automation moved to Rony's new Claude account: daily maker at 5:01 AM IST, recurring 8 PM poster; no one-time post tasks. First trend research run manually."
   }
  ],
  "report_style": "short: 2 to 4 lines, no explanations",
@@ -473,9 +478,80 @@
  },
  "whatsapp_channel": "manual: Rony forwards the copy-ready text sent to Telegram",
  "trends": {
-  "last_research": null,
-  "ideas": [],
-  "rejected": [],
+  "last_research": "2026-11-22",
+  "ideas": [
+   {
+    "title": "The Man Allah Spoke To",
+    "status": "accepted",
+    "parts": 1,
+    "sources": [
+     "Jami at-Tirmidhi 3010 (hasan)",
+     "Sunan Ibn Majah 190 (hasan)",
+     "Sahih Muslim 2471 (angels shading him)",
+     "Qur'an 3:169"
+    ],
+    "beats": "Jabir is grieving after Uhud: his father Abdullah ibn Amr ibn Haram is martyred, leaving debts and daughters. The Prophet ﷺ tells him: Allah speaks to no one except from behind a veil, but He spoke to your father directly: ask Me. He asked to return and be killed for Allah again. Allah said it is decreed they will not return. Then 3:169 was revealed.",
+    "trend_signal": "@ilmora.io reel on this story, 76K views, 77x their median (Nov 2026)"
+   },
+   {
+    "title": "The Palm Trunk That Cried",
+    "status": "accepted",
+    "parts": 1,
+    "sources": [
+     "Sahih al-Bukhari 3583"
+    ],
+    "beats": "The Prophet ﷺ gave sermons leaning on a palm trunk; a pulpit was made; the trunk cried out; he came down and placed his hand on it until it calmed.",
+    "trend_signal": "Several Hindi/English shorts on the crying palm trunk in the last 30 days"
+   },
+   {
+    "title": "A Thousand Fed at the Trench",
+    "status": "accepted",
+    "parts": 1,
+    "sources": [
+     "Sahih al-Bukhari 4101",
+     "Sahih al-Bukhari 4102 (about one thousand ate)"
+    ],
+    "beats": "Digging the Trench, hunger; Jabir sees the Prophet ﷺ with a stone tied to his stomach; prepares a small goat and a little barley; the Prophet ﷺ invites the whole army; about a thousand eat their fill and the pot is still full.",
+    "trend_signal": "'Feeding 1,000 with one kilo of barley' short trending in the niche"
+   }
+  ],
+  "rejected": [
+   {
+    "title": "Old woman who threw thorns on the Prophet's ﷺ path",
+    "reason": "No authentic source; popular tale only",
+    "date": "2026-11-22"
+   },
+   {
+    "title": "The Golden Deer story",
+    "reason": "No source; naat-based tale",
+    "date": "2026-11-22"
+   },
+   {
+    "title": "Feeding the blind Jewish beggar (Abu Bakr)",
+    "reason": "No authentic chain",
+    "date": "2026-11-22"
+   },
+   {
+    "title": "Umar scolding Munkar and Nakir",
+    "reason": "Fabricated",
+    "date": "2026-11-22"
+   },
+   {
+    "title": "Prophet Daniel in the lions' den",
+    "reason": "Israiliyyat only, not in Qur'an or authentic hadith",
+    "date": "2026-11-22"
+   },
+   {
+    "title": "Ali and the fake funeral",
+    "reason": "No authentic source",
+    "date": "2026-11-22"
+   },
+   {
+    "title": "Fresh blood from a martyr's grave after 46 years",
+    "reason": "Details rest on weak or disputed reports; when in doubt, reject",
+    "date": "2026-11-22"
+   }
+  ],
   "specials_every_n_days": 4,
   "vidiq_monthly_credits": 150
  },
