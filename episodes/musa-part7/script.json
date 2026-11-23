@@ -1,0 +1,111 @@
+{
+ "title": "Musa, Part 7: The Signs",
+ "fact_notes": [
+  "Quran 7:127-137 (Sahih International via legacy.quran.com, checked 2026-11-23)",
+  "Line 1: 7:133; 2-3: 7:130; 4-5: 7:131 (saw an evil omen in Musa and those with him); 6: 7:132; 7-8: 7:133; 9-10: 7:134; 11: 7:135 (removed until a term); 12: 7:136 (drowned in the sea, told next part)",
+  "No order, duration or count of the signs is claimed beyond the Qur'an's list; 'one sign after another' follows 'distinct signs' (mufassalat)."
+ ],
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "Flood, locusts, lice, frogs and blood. One sign after another.",
+     "spoken": "Flood, locusts, lice, frogs and blood. One sign after another.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 2,
+     "text": "Then Allah seized Pharaoh's people with years of famine and failing fruits.",
+     "spoken": "Then Allah seized Pharaoh's people with years of famine and failing fruits.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 3,
+     "text": "It was so that they might be reminded.",
+     "spoken": "It was so that they might be reminded.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 4,
+     "text": "But when good came, they said: \"This is ours.\"",
+     "spoken": "But when good came, they said: \"This is ours.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 5,
+     "text": "And when hardship struck, they blamed Musa and those with him.",
+     "spoken": "And when hardship struck, they blamed Musa and those with him.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 6,
+     "text": "They said: \"Whatever sign you bring us, we will never believe you.\"",
+     "spoken": "They said: \"Whatever sign you bring us, we will never believe you.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 7,
+     "text": "So Allah sent the flood, locusts, lice, frogs and blood, as clear signs.",
+     "spoken": "So Allah sent the flood, locusts, lice, frogs and blood, as clear signs.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 8,
+     "text": "But they were arrogant, a criminal people.",
+     "spoken": "But they were arrogant, a criminal people.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 9,
+     "text": "When the punishment fell on them, they begged: \"Musa, pray to your Lord for us.\"",
+     "spoken": "When the punishment fell on them, they begged: \"Musa, pray to your Lord for us.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 10,
+     "text": "\"Remove it, and we will believe, and send the Children of Israel with you.\"",
+     "spoken": "\"Remove it, and we will believe, and send the Children of Israel with you.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 11,
+     "text": "But when Allah lifted it for a time, at once they broke their word.",
+     "spoken": "But when Allah lifted it for a time, at once they broke their word.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 12,
+     "text": "Their promises were empty, and the sea was waiting. Follow for Part 8.",
+     "spoken": "Their promises were empty, and the sea was waiting. Follow for Part eight.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ]
+}
