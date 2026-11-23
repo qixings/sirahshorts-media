@@ -551,6 +551,96 @@
    "comments": 0,
    "shares": 0,
    "saved": 1
+  },
+  {
+   "date": "2026-11-24",
+   "time_ist": "05:10",
+   "ig_followers": 6,
+   "yt_views": 3174,
+   "yt_subscribers": 17,
+   "episode": "musa-part1",
+   "ig_media_id": "18658667887032286",
+   "views": 179,
+   "reach": 139,
+   "likes": 4,
+   "comments": 0,
+   "shares": 0,
+   "saved": 2
+  },
+  {
+   "date": "2026-11-24",
+   "time_ist": "05:10",
+   "ig_followers": 6,
+   "yt_views": 3174,
+   "yt_subscribers": 17,
+   "episode": "musa-part2",
+   "ig_media_id": "18117902339156332",
+   "views": 191,
+   "reach": 144,
+   "likes": 6,
+   "comments": 4,
+   "shares": 1,
+   "saved": 0
+  },
+  {
+   "date": "2026-11-24",
+   "time_ist": "05:10",
+   "ig_followers": 6,
+   "yt_views": 3174,
+   "yt_subscribers": 17,
+   "episode": "musa-part3",
+   "ig_media_id": "18102274724101809",
+   "views": 160,
+   "reach": 137,
+   "likes": 7,
+   "comments": 4,
+   "shares": 1,
+   "saved": 2
+  },
+  {
+   "date": "2026-11-24",
+   "time_ist": "05:10",
+   "ig_followers": 6,
+   "yt_views": 3174,
+   "yt_subscribers": 17,
+   "episode": "musa-part4",
+   "ig_media_id": "17958760077277917",
+   "views": 133,
+   "reach": 108,
+   "likes": 5,
+   "comments": 2,
+   "shares": 0,
+   "saved": 0
+  },
+  {
+   "date": "2026-11-24",
+   "time_ist": "05:10",
+   "ig_followers": 6,
+   "yt_views": 3174,
+   "yt_subscribers": 17,
+   "episode": "musa-part5",
+   "ig_media_id": "18124545386075952",
+   "views": 199,
+   "reach": 170,
+   "likes": 6,
+   "comments": 0,
+   "shares": 0,
+   "saved": 1
+  },
+  {
+   "date": "2026-11-24",
+   "time_ist": "05:10",
+   "ig_followers": 6,
+   "yt_views": 3174,
+   "yt_subscribers": 17,
+   "episode": "musa-part6",
+   "ig_media_id": "18111598376631386",
+   "views": 136,
+   "reach": 107,
+   "likes": 7,
+   "comments": 1,
+   "shares": 0,
+   "saved": 0
   }
  ],
  "paused": false,
@@ -689,6 +779,10 @@
    {
     "date": "2026-11-23",
     "note": "Special was due (3 series parts in a row) but sunnah.com could not be fetched this run, so 'The Man Allah Spoke To' could not be verified; made Musa Part 7 instead. Next run should try the special again."
+   },
+   {
+    "date": "2026-11-24",
+    "note": "No episode made: WebFetch to quran.com and sunnah.com was blocked (permission prompt not answered in the unattended run), so neither the special 'The Man Allah Spoke To' nor Musa Part 8 verses could be verified (rule 2). Special is still due next."
    }
   ]
  },
@@ -705,10 +799,11 @@
    "UgykUfvQQYvtznDN9PV4AaABAg",
    "UgzbzjIsDfCWNLF_fYt4AaABAg",
    "122104347471547769_1140230691736111",
-   "18120139805064346"
+   "18120139805064346",
+   "17997042558025415"
   ],
-  "replied": 8,
-  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded). 2026-11-23: no new comments on IG/FB/YT (3 of 4 YT comment-thread calls returned 403 forbidden, 1 empty)."
+  "replied": 9,
+  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded). 2026-11-23: no new comments on IG/FB/YT (3 of 4 YT comment-thread calls returned 403 forbidden, 1 empty). 2026-11-24: 1 IG reply (Part 6 hearts); FB none new; YT Part 4/5 comment threads 403, Part 6 empty."
  },
  "office": {
   "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
