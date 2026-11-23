@@ -165,16 +165,43 @@
    "style": "painted (engine)",
    "duration_s": 66.5,
    "ig_caption": "The magicians came to beat Musa, and left as believers ✨\n\nProphet Musa (AS), Part 6: The Magicians\nRopes that seemed to move, a staff that swallowed them all, and a faith no threat could break.\n📖 Surah Taha 20:57-73, Surah Al-A'raf 7:113-126\n\nSend this to someone who loves these stories.\nNew here? Start with Part 1, pinned on our profile.\nFollow @sirahshorts for Part 7 🌾\n\n#ProphetMusa #StoriesOfTheProphets #IslamicHistory #QuranStories #Islam"
-  }
- ],
- "plan": [
+  },
   {
+   "n": 7,
    "prophet": "Musa",
    "part": 7,
    "title": "The Signs",
+   "slug": "musa-part7",
    "refs": "Al-A'raf 7:130-136",
-   "beats": "Years of drought and shortage; flood, locusts, lice, frogs and blood as distinct signs; each time they ask Musa to pray and promise to believe, then break the promise."
-  },
+   "video": "videos/musa-part7.mp4",
+   "date": "2026-11-24",
+   "time_ist": "20:00",
+   "status": "scheduled",
+   "fb_video_id": "2183004622604093",
+   "voice": "Gregory Grumble (API, stability 0.5, similarity 0.56)",
+   "style": "painted (engine)",
+   "duration_s": 61.1,
+   "ig_caption": "Flood, locusts, lice, frogs and blood. Sign after sign, and still they refused 🐸\n\nProphet Musa (AS), Part 7: The Signs\nYears of famine, five clear signs, and promises broken every time.\n📖 Surah Al-A'raf 7:130-136\n\nNew here? Start with Part 1, pinned on our profile.\nFollow @sirahshorts for Part 8 🌊\n\n#ProphetMusa #StoriesOfTheProphets #IslamicHistory #QuranStories #Islam",
+   "hook": "Flood, locusts, lice, frogs and blood. Sign after sign, and still they refused 🐸",
+   "yt_title": "Prophet Musa (AS) Part 7: The Signs 🐸 #Shorts",
+   "yt_tags": [
+    "Prophet Musa",
+    "Moses",
+    "Stories of the Prophets",
+    "Quran stories",
+    "Pharaoh",
+    "Ten plagues Quran",
+    "Surah Al-A'raf",
+    "Islamic history",
+    "Islamic shorts",
+    "Prophet stories"
+   ],
+   "pin_description": "Flood, locusts, lice, frogs and blood. Sign after sign, and still they refused. Prophet Musa (AS), Part 7: The Signs. Years of famine, five clear signs, and promises broken every time. Surah Al-A'raf 7:130-136. #ProphetMusa #StoriesOfTheProphets #QuranStories #Islam",
+   "wa_text": "Flood, locusts, lice, frogs and blood. Sign after sign, and still they refused 🐸\n\nProphet Musa (AS), Part 7: The Signs\n📖 Surah Al-A'raf 7:130-136",
+   "note": "Made by the daily run 2026-11-23; FB scheduled natively; IG/Story/YT/Pinterest/Telegram LIVE by the 8 PM poster."
+  }
+ ],
+ "plan": [
   {
    "prophet": "Musa",
    "part": 8,
@@ -442,6 +469,81 @@
    "shares": 0,
    "saved": 0,
    "note": "YouTube API quota exceeded at run time"
+  },
+  {
+   "date": "2026-11-23",
+   "time_ist": "05:10",
+   "ig_followers": 5,
+   "yt_views": 3056,
+   "yt_subscribers": 17,
+   "episode": "musa-part1",
+   "ig_media_id": "18658667887032286",
+   "views": 179,
+   "reach": 139,
+   "likes": 4,
+   "comments": 0,
+   "shares": 0,
+   "saved": 2
+  },
+  {
+   "date": "2026-11-23",
+   "time_ist": "05:10",
+   "ig_followers": 5,
+   "yt_views": 3056,
+   "yt_subscribers": 17,
+   "episode": "musa-part2",
+   "ig_media_id": "18117902339156332",
+   "views": 190,
+   "reach": 144,
+   "likes": 6,
+   "comments": 4,
+   "shares": 1,
+   "saved": 0
+  },
+  {
+   "date": "2026-11-23",
+   "time_ist": "05:10",
+   "ig_followers": 5,
+   "yt_views": 3056,
+   "yt_subscribers": 17,
+   "episode": "musa-part3",
+   "ig_media_id": "18102274724101809",
+   "views": 159,
+   "reach": 136,
+   "likes": 7,
+   "comments": 4,
+   "shares": 1,
+   "saved": 2
+  },
+  {
+   "date": "2026-11-23",
+   "time_ist": "05:10",
+   "ig_followers": 5,
+   "yt_views": 3056,
+   "yt_subscribers": 17,
+   "episode": "musa-part4",
+   "ig_media_id": "17958760077277917",
+   "views": 133,
+   "reach": 107,
+   "likes": 5,
+   "comments": 2,
+   "shares": 0,
+   "saved": 0
+  },
+  {
+   "date": "2026-11-23",
+   "time_ist": "05:10",
+   "ig_followers": 5,
+   "yt_views": 3056,
+   "yt_subscribers": 17,
+   "episode": "musa-part5",
+   "ig_media_id": "18124545386075952",
+   "views": 154,
+   "reach": 126,
+   "likes": 5,
+   "comments": 0,
+   "shares": 0,
+   "saved": 1
   }
  ],
  "paused": false,
@@ -481,7 +583,22 @@
  "outreach": {
   "weekly_max": 5,
   "contacted": [],
-  "rules": "Instagram Collab post proposal only, creators with a PUBLIC business email, one follow-up after 7 days, never the same creator twice."
+  "rules": "Instagram Collab post proposal only, creators with a PUBLIC business email, one follow-up after 7 days, never the same creator twice.",
+  "log": [
+   {
+    "date": "2026-11-23",
+    "result": "0 emails sent: Composio wallet out of credits, SCRAPECREATORS profile reads failed (402); no public emails could be checked, none guessed.",
+    "candidates_to_check": [
+     "growwithnabaaa",
+     "yoali.talk",
+     "nocturne_1_",
+     "inssquotes",
+     "sadman_kabir2345",
+     "dailyduaremindershq"
+    ],
+    "vidiq_credits_spent": 10
+   }
+  ]
  },
  "whatsapp_channel": "manual: Rony forwards the copy-ready text sent to Telegram",
  "trends": {
@@ -560,7 +677,13 @@
    }
   ],
   "specials_every_n_days": 4,
-  "vidiq_monthly_credits": 150
+  "vidiq_monthly_credits": 150,
+  "notes": [
+   {
+    "date": "2026-11-23",
+    "note": "Special was due (3 series parts in a row) but sunnah.com could not be fetched this run, so 'The Man Allah Spoke To' could not be verified; made Musa Part 7 instead. Next run should try the special again."
+   }
+  ]
  },
  "long_videos": [],
  "comments": {
@@ -578,7 +701,7 @@
    "18120139805064346"
   ],
   "replied": 8,
-  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded)."
+  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded). 2026-11-23: no new comments on IG/FB/YT (3 of 4 YT comment-thread calls returned 403 forbidden, 1 empty)."
  },
  "office": {
   "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
