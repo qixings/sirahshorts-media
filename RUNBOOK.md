@@ -24,8 +24,15 @@ username "sirahshorts"; if not, do not post and send 🚨.
    `engine/core/paint.py`). Other people are never drawn: show them through objects (sheep, staffs, a tent, footprints,
    lamps, a doorway). No faces, no silhouettes of people, no AI images of people.
 2. **Facts come from the Qur'an.** Every line must be supported by the verses in the episode's refs. Before writing,
-   fetch the verses in English (for example `https://quran.com/<surah>/<from>-<to>` with WebFetch) and check each line
-   against them. Names or details that come only from tafsir or hadith (for example Asiya, Shu'ayb, the Nile) are allowed
+   fetch the verses in English and check each line against them. Fetch them in COMPOSIO_REMOTE_WORKBENCH (it needs
+   no approval; WebFetch does, and nobody is there to approve it in a scheduled run):
+   `requests.get(f"https://api.quran.com/api/v4/verses/by_chapter/{surah}", params={"translations": "20", "per_page": 300})`
+   (translation 20 = Saheeh International; strip the <sup> footnote tags; filter the verse numbers you need).
+   Hadith the same way, with the grades included:
+   `requests.get(f"https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-{book}/{number}.json")`
+   (book = bukhari, muslim, tirmidhi, abudawud, nasai, ibnmajah; use only Bukhari, Muslim, or a hadith whose `grades`
+   say Sahih or Hasan). sunnah.com and quran.com pages block or need approval, so do not use WebFetch for them.
+   If even this fails, send 🚨 and make no episode. Names or details that come only from tafsir or hadith (for example Asiya, Shu'ayb, the Nile) are allowed
    only if phrased so the narration does not claim the Qur'an says them, and you note them in `fact_notes`.
    If a verse is unclear or scholars differ, leave the detail out.
 3. Respectful wording: "Allah", "Prophet Musa (AS)" in captions; never comedic; keep sensitive passages (Yusuf 12:23-29,
@@ -124,7 +131,7 @@ reply from us. Sort each new comment into one group:
 | Source | "where is this from", "which surah", "from the bible" | State the Surah and verses of that episode, calmly, e.g. "This part follows Surah Al-Qasas 28:7-13 in the Qur'an 📖". No comparison or debate |
 | Story request | "do Prophet Yunus next" | Thank them; add the idea to `state.trends.ideas` with source "comment" |
 | Ruling or deep question | halal/haram, fiqh, tafsir disputes, "is it allowed to..." | Do NOT reply. Send to Rony (see below) |
-| Correction | "this is wrong, actually..." | Do NOT reply. Check the claim on quran.com / sunnah.com, send Rony the claim, what you found, and a suggested reply |
+| Correction | "this is wrong, actually..." | Do NOT reply. Check the claim with the verse and hadith fetch from rule 2, send Rony the claim, what you found, and a suggested reply |
 | Collab, business | "collab?", "promote my page" | Do NOT reply. Send to Rony |
 | Spam, hate, arguments, insults to any faith | | Ignore. Never reply, never delete |
 
@@ -168,7 +175,7 @@ Only on Fridays (IST). Budget: vidIQ has 150 credits a month, shared with outrea
 2. Authenticity check for every candidate story (this decides everything):
    - Allowed sources only: the Qur'an; hadith in Sahih al-Bukhari or Sahih Muslim; hadith graded sahih or hasan by
      recognized scholars in the other major collections; well-established seerah events agreed on by the major seerah
-     works. Verify the exact source text yourself (quran.com, sunnah.com with WebFetch) and record collection and number.
+     works. Verify the exact source text yourself (the workbench fetch in rule 2) and record collection and number.
    - Reject: stories found only in Israiliyyat, weak (da'if) or fabricated narrations, "viral" moral tales with no chain,
      unverifiable miracle claims, "scientific miracle" claims, anything sectarian or politically charged, and anything
      that would need a prophet, companion or person to be shown. Put rejected ideas in `state.trends.rejected` with the
@@ -329,7 +336,9 @@ anything. At most `state.outreach.weekly_max` (5) new creators per week, never a
 1. Find candidates: vidiq_instagram_account_discovery with niche "Islamic reminders, Quran and prophet stories, Islamic
    history" and an audience line for English-speaking Muslims (Global: true), followers 5,000 to 150,000. Skip accounts
    that are not clearly respectful Islamic content, that post music, or that look like large media companies.
-2. For each, read the public profile with SCRAPECREATORS_GET_INSTAGRAM_PROFILE through Composio (cheap; save vidIQ credits) and use only a business
+2. For each, read the public profile with SCRAPECREATORS_GET_INSTAGRAM_PROFILE through Composio (cheap; save vidIQ credits).
+   If it fails with 402 (Composio wallet empty), use mcp vidiq_ig_profile instead (5 credits each, at most 3 profiles a
+   week, only for the best candidates) and use only a business
    email the creator shows publicly in their bio or contact button. No email shown: skip them. Never guess emails.
 3. Send from sirahshorts@gmail.com with GMAIL_SEND_EMAIL (account gmail_melas-mong), plain text, short and personal:
    subject "Collab idea: Stories of the Prophets x @<handle>"; mention one specific thing about their content; one line
