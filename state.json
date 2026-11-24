@@ -211,6 +211,43 @@
    "yt_video_id": "P_cMoliK12M",
    "pin_id": "228135537373941295",
    "story": "failed: video 61.1s exceeds 60s Story limit"
+  },
+  {
+   "n": 8,
+   "kind": "special",
+   "prophet": null,
+   "part": null,
+   "title": "The Man Allah Spoke To",
+   "slug": "special-man-allah-spoke-to",
+   "refs": "Jami at-Tirmidhi 3010; Sunan Ibn Majah 190 (hasan); Qur'an Al Imran 3:169",
+   "video": "videos/special-man-allah-spoke-to.mp4",
+   "date": "2026-11-26",
+   "time_ist": "20:00",
+   "status": "scheduled",
+   "fb_video_id": "2195633927998430",
+   "voice": "Gregory Grumble (API, stability 0.5, similarity 0.56)",
+   "style": "painted (engine)",
+   "duration_s": 57.5,
+   "ig_caption": "Allah speaks to no one except from behind a veil. But one man, He spoke to directly 🤍\n\nSirah Shorts Special: The Man Allah Spoke To\nAfter Uhud, Jabir's father was martyred, and Allah said to him: Ask of Me.\n📖 Source: Jami at-Tirmidhi 3010 and Sunan Ibn Majah 190 (hasan), Qur'an 3:169\n\nSave this for someone who is grieving.\nNew here? Start with Prophet Musa (AS) Part 1, pinned on our profile.\nFollow @sirahshorts for Musa Part 8 🌊\n\n#StoriesOfTheSahaba #IslamicHistory #QuranStories #Islam #Sahaba",
+   "hook": "Allah speaks to no one except from behind a veil. But one man, He spoke to directly 🤍",
+   "yt_title": "The Man Allah Spoke To Directly 🤍 Sirah Shorts Special #Shorts",
+   "yt_tags": [
+    "Sirah Shorts Special",
+    "Jabir ibn Abdullah",
+    "Battle of Uhud",
+    "Shaheed",
+    "Martyrs in Islam",
+    "Sahaba stories",
+    "Islamic stories",
+    "Quran 3:169",
+    "Hadith",
+    "Islamic shorts"
+   ],
+   "yt_description_note": "Special: no prophet playlist. Use the caption as description with #Shorts first among the hashtags and the line 'Out of respect, no Prophet or person is shown.' Skip YOUTUBE_ADD_VIDEO_TO_PLAYLIST.",
+   "pin_title": "Sirah Shorts Special: The Man Allah Spoke To",
+   "pin_description": "Allah speaks to no one except from behind a veil. But one man, He spoke to directly. After Uhud, Jabir's father was martyred, and Allah said to him: Ask of Me. Source: Jami at-Tirmidhi 3010, Sunan Ibn Majah 190 (hasan), Qur'an 3:169. #IslamicHistory #QuranStories #Sahaba #Islam",
+   "wa_text": "Allah speaks to no one except from behind a veil. But one man, He spoke to directly 🤍\n\nSirah Shorts Special: The Man Allah Spoke To\n📖 Source: Jami at-Tirmidhi 3010, Sunan Ibn Majah 190 (hasan), Qur'an 3:169",
+   "note": "Made by the daily run 2026-11-25; FB scheduled natively; IG/Story/YT/Pinterest/Telegram LIVE by the 8 PM poster. Under 60s so the Story should work."
   }
  ],
  "plan": [
@@ -646,6 +683,111 @@
    "comments": 1,
    "shares": 0,
    "saved": 0
+  },
+  {
+   "date": "2026-11-25",
+   "time_ist": "05:05",
+   "ig_followers": 6,
+   "yt_views": 3672,
+   "yt_subscribers": 19,
+   "episode": "musa-part1",
+   "ig_media_id": "18658667887032286",
+   "views": 179,
+   "reach": 139,
+   "likes": 4,
+   "comments": 0,
+   "shares": 0,
+   "saved": 2
+  },
+  {
+   "date": "2026-11-25",
+   "time_ist": "05:05",
+   "ig_followers": 6,
+   "yt_views": 3672,
+   "yt_subscribers": 19,
+   "episode": "musa-part2",
+   "ig_media_id": "18117902339156332",
+   "views": 191,
+   "reach": 144,
+   "likes": 6,
+   "comments": 4,
+   "shares": 1,
+   "saved": 0
+  },
+  {
+   "date": "2026-11-25",
+   "time_ist": "05:05",
+   "ig_followers": 6,
+   "yt_views": 3672,
+   "yt_subscribers": 19,
+   "episode": "musa-part3",
+   "ig_media_id": "18102274724101809",
+   "views": 160,
+   "reach": 137,
+   "likes": 7,
+   "comments": 4,
+   "shares": 1,
+   "saved": 2
+  },
+  {
+   "date": "2026-11-25",
+   "time_ist": "05:05",
+   "ig_followers": 6,
+   "yt_views": 3672,
+   "yt_subscribers": 19,
+   "episode": "musa-part4",
+   "ig_media_id": "17958760077277917",
+   "views": 133,
+   "reach": 108,
+   "likes": 5,
+   "comments": 2,
+   "shares": 0,
+   "saved": 0
+  },
+  {
+   "date": "2026-11-25",
+   "time_ist": "05:05",
+   "ig_followers": 6,
+   "yt_views": 3672,
+   "yt_subscribers": 19,
+   "episode": "musa-part5",
+   "ig_media_id": "18124545386075952",
+   "views": 200,
+   "reach": 172,
+   "likes": 6,
+   "comments": 0,
+   "shares": 0,
+   "saved": 1
+  },
+  {
+   "date": "2026-11-25",
+   "time_ist": "05:05",
+   "ig_followers": 6,
+   "yt_views": 3672,
+   "yt_subscribers": 19,
+   "episode": "musa-part6",
+   "ig_media_id": "18111598376631386",
+   "views": 180,
+   "reach": 148,
+   "likes": 8,
+   "comments": 2,
+   "shares": 0,
+   "saved": 0
+  },
+  {
+   "date": "2026-11-25",
+   "time_ist": "05:05",
+   "ig_followers": 6,
+   "yt_views": 3672,
+   "yt_subscribers": 19,
+   "episode": "musa-part7",
+   "ig_media_id": "17977826844159941",
+   "views": 61,
+   "reach": 54,
+   "likes": 1,
+   "comments": 0,
+   "shares": 0,
+   "saved": 1
   }
  ],
  "paused": false,
@@ -708,16 +850,17 @@
   "ideas": [
    {
     "title": "The Man Allah Spoke To",
-    "status": "accepted",
+    "status": "made",
     "parts": 1,
     "sources": [
      "Jami at-Tirmidhi 3010 (hasan)",
      "Sunan Ibn Majah 190 (hasan)",
-     "Sahih Muslim 2471 (angels shading him)",
+     "Sahih al-Bukhari 2781 (debts, daughters)",
      "Qur'an 3:169"
     ],
     "beats": "Jabir is grieving after Uhud: his father Abdullah ibn Amr ibn Haram is martyred, leaving debts and daughters. The Prophet ﷺ tells him: Allah speaks to no one except from behind a veil, but He spoke to your father directly: ask Me. He asked to return and be killed for Allah again. Allah said it is decreed they will not return. Then 3:169 was revealed.",
-    "trend_signal": "@ilmora.io reel on this story, 76K views, 77x their median (Nov 2026)"
+    "trend_signal": "@ilmora.io reel on this story, 76K views, 77x their median (Nov 2026)",
+    "episode": "special-man-allah-spoke-to"
    },
    {
     "title": "The Palm Trunk That Cried",
@@ -788,6 +931,10 @@
    {
     "date": "2026-11-24",
     "note": "No episode made: WebFetch to quran.com and sunnah.com was blocked (permission prompt not answered in the unattended run), so neither the special 'The Man Allah Spoke To' nor Musa Part 8 verses could be verified (rule 2). Special is still due next."
+   },
+   {
+    "date": "2026-11-25",
+    "note": "Special 'The Man Allah Spoke To' made for 26 Nov (hadith verified via the local jsDelivr fetch). Muslim 2471 in the old sources did not match in the hadith-api numbering; angels shading him is Bukhari 1244 (not used in the script). Musa Part 8 resumes next."
    }
   ]
  },
@@ -824,10 +971,12 @@
    "UgzbzjIsDfCWNLF_fYt4AaABAg",
    "122104347471547769_1140230691736111",
    "18120139805064346",
-   "17997042558025415"
+   "17997042558025415",
+   "UgzOuqSXLG1eX_D9jc14AaABAg",
+   "18133923355684735"
   ],
-  "replied": 9,
-  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded). 2026-11-23: no new comments on IG/FB/YT (3 of 4 YT comment-thread calls returned 403 forbidden, 1 empty). 2026-11-24: 1 IG reply (Part 6 hearts); FB none new; YT Part 4/5 comment threads 403, Part 6 empty."
+  "replied": 10,
+  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded). 2026-11-23: no new comments on IG/FB/YT (3 of 4 YT comment-thread calls returned 403 forbidden, 1 empty). 2026-11-24: 1 IG reply (Part 6 hearts); FB none new; YT Part 4/5 comment threads 403, Part 6 empty. 2026-11-25: 1 YT reply (Part 5 hearts); IG/FB none new."
  },
  "office": {
   "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
