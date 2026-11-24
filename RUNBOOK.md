@@ -24,8 +24,10 @@ username "sirahshorts"; if not, do not post and send 🚨.
    `engine/core/paint.py`). Other people are never drawn: show them through objects (sheep, staffs, a tent, footprints,
    lamps, a doorway). No faces, no silhouettes of people, no AI images of people.
 2. **Facts come from the Qur'an.** Every line must be supported by the verses in the episode's refs. Before writing,
-   fetch the verses in English and check each line against them. Fetch them in COMPOSIO_REMOTE_WORKBENCH (it needs
-   no approval; WebFetch does, and nobody is there to approve it in a scheduled run):
+   fetch the verses in English and check each line against them. Fetch them from the local shell with curl or Python
+   (api.quran.com and cdn.jsdelivr.net are on Rony's allowed websites since 24 Nov 2026; no approval needed). Do NOT use
+   WebFetch for this: it needs an approval nobody can give in a scheduled run. Only if the local fetch fails, run the
+   same requests in COMPOSIO_REMOTE_WORKBENCH as a backup (it uses Rony's Composio allowance, so avoid it otherwise):
    `requests.get(f"https://api.quran.com/api/v4/verses/by_chapter/{surah}", params={"translations": "20", "per_page": 300})`
    (translation 20 = Saheeh International; strip the <sup> footnote tags; filter the verse numbers you need).
    Hadith the same way, with the grades included:
