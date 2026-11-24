@@ -1,0 +1,106 @@
+{
+ "title": "Sirah Shorts Special: The Man Allah Spoke To",
+ "kind": "special",
+ "fact_notes": [
+  "Jami at-Tirmidhi 3010 (hasan: Albani, Ahmad Shakir) and Sunan Ibn Majah 190 (hasan), fetched from fawazahmed0/hadith-api on 2026-11-25",
+  "Lines 2-9 follow the hadith wording: Jabir upset/broken-hearted; father martyred on the Day of Uhud leaving family and debt; 'Allah does not speak to anyone except from behind a veil, but He spoke to your father directly'; 'ask of Me and I will give you'; 'give me life so I may be killed for You a second time'; 'it has been decreed that they shall not return'; 'convey to those I left behind' (Ibn Majah 190).",
+  "Father's name Abdullah (ibn Amr ibn Haram) is from Ibn Majah 190. 'Family and debts' also Sahih al-Bukhari 2781 (six daughters and debts).",
+  "Lines 10-11: Qur'an Al Imran 3:169 (Saheeh International via api.quran.com, checked 2026-11-25).",
+  "Line 12 is a reflection, not a claim. The Prophet (peace be upon him), Jabir and his father are never shown, not even as light."
+ ],
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "Allah speaks to no one except from behind a veil. But one man, He spoke to directly.",
+     "spoken": "Allah speaks to no one except from behind a veil. But one man, He spoke to directly.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 2,
+     "text": "After Uhud, Jabir was broken-hearted. His father had been martyred.",
+     "spoken": "After Oohud, Jaabir was broken-hearted. His father had been martyred.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.35
+    },
+    {
+     "id": 3,
+     "text": "He had left behind a family and debts.",
+     "spoken": "He had left behind a family and debts.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 4,
+     "text": "The Prophet, peace be upon him, said: \"Shall I give you glad news of your father?\"",
+     "spoken": "The Prophet, peace be upon him, said: \"Shall I give you glad news of your father?\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 5,
+     "text": "\"Allah spoke to him directly, and said: Ask of Me, and I will give you.\"",
+     "spoken": "\"Allah spoke to him directly, and said: Ask of Me, and I will give you.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 6,
+     "text": "He said: \"My Lord, give me life again, to be killed for You a second time.\"",
+     "spoken": "He said: \"My Lord, give me life again, to be killed for You a second time.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 7,
+     "text": "Allah said: \"It is decreed. They will not return.\"",
+     "spoken": "Allah said: \"It is decreed. They will not return.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 8,
+     "text": "He said: \"Then tell those I left behind.\"",
+     "spoken": "He said: \"Then tell those I left behind.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 9,
+     "text": "So Allah revealed: \"Never think of those killed in the cause of Allah as dead.\"",
+     "spoken": "So Allah revealed: \"Never think of those killed in the cause of Allah as dead.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 10,
+     "text": "\"They are alive with their Lord, receiving provision.\"",
+     "spoken": "\"They are alive with their Lord, receiving provision.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.65
+    },
+    {
+     "id": 11,
+     "text": "Some grief hides glad news you cannot see yet. Next is Musa. Follow for Part 8.",
+     "spoken": "Some grief hides glad news you cannot see yet. Next is Moosa. Follow for Part eight.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ]
+}
