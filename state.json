@@ -786,7 +786,25 @@
    }
   ]
  },
- "long_videos": [],
+ "long_videos": [
+  {
+   "kind": "chapter",
+   "prophet": "Musa",
+   "parts": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "title": "The Early Life",
+   "file": "long/musa-1-4.mp4",
+   "duration": 193.0,
+   "yt_video_id": "knCI8dpZN0E",
+   "fb_video_id": "1670196888109156",
+   "date": "2026-11-24",
+   "pending": "Add to playlist PLZ_eT7sWEYTQ and set thumbnail long/musa-1-4.mp4.thumb.jpg (YouTube quota exceeded at upload time)"
+  }
+ ],
  "comments": {
   "seen": [
    "17881473114562674",
