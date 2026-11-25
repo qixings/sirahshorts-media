@@ -1,0 +1,119 @@
+{
+ "title": "Musa, Part 8: The Sea Splits",
+ "fact_notes": [
+  "Quran 26:52-68, 10:90-92, 20:77-78 (Saheeh International via api.quran.com, checked 2026-11-26)",
+  "Line 1: 26:61-63 (pursuers in sight, sea to be struck); 2: 26:52; 3: 26:53-54; 4: 26:60; 5: 26:61; 6: 26:62; 7-8: 26:63; 9: 26:65; 10: 20:78, 26:66; 11: 10:90-91; 12: 10:92; 13: teaser for Al-Kahf 18:60-66 (Part 9).",
+  "No number of people, place name, or crossing detail beyond the verses is claimed."
+ ],
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "Pharaoh's army behind them, the sea in front. Nowhere left to run.",
+     "spoken": "Pharaoh's army behind them, the sea in front. Nowhere left to run.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 2,
+     "text": "Allah had inspired Musa: \"Travel by night. You will be pursued.\"",
+     "spoken": "Allah had inspired Musa: \"Travel by night. You will be pursued.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 3,
+     "text": "Pharaoh sent gatherers to the cities: \"They are only a small band.\"",
+     "spoken": "Pharaoh sent gatherers to the cities: \"They are only a small band.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 4,
+     "text": "At sunrise, his army set out after them.",
+     "spoken": "At sunrise, his army set out after them.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 5,
+     "text": "When they saw each other, Musa's people cried: \"We will be overtaken!\"",
+     "spoken": "When they saw each other, Musa's people cried: \"We will be overtaken!\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 6,
+     "text": "Musa said: \"No! My Lord is with me. He will guide me.\"",
+     "spoken": "Musa said: \"No! My Lord is with me. He will guide me.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 7,
+     "text": "Then Allah inspired him: \"Strike the sea with your staff.\"",
+     "spoken": "Then Allah inspired him: \"Strike the sea with your staff.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 8,
+     "text": "The sea split apart, each side like a great towering mountain.",
+     "spoken": "The sea split apart, each side like a great towering mountain.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 9,
+     "text": "Allah saved Musa and all who were with him.",
+     "spoken": "Allah saved Musa and all who were with him.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 10,
+     "text": "Pharaoh followed with his soldiers, and the sea covered them.",
+     "spoken": "Pharaoh followed with his soldiers, and the sea covered them.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 11,
+     "text": "Drowning, he cried: \"I believe!\" Allah said: \"Now? After you disobeyed?\"",
+     "spoken": "Drowning, he cried: \"I believe!\" Allah said: \"Now? After you disobeyed?\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 12,
+     "text": "His body was saved, a sign for all who come after.",
+     "spoken": "His body was saved, a sign for all who come after.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 13,
+     "text": "Next, Musa seeks a man given knowledge he did not have. Follow for Part 9.",
+     "spoken": "Next, Musa seeks a man given knowledge he did not have. Follow for Part nine.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ]
+}
