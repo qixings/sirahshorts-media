@@ -265,7 +265,7 @@
       "video": "videos/musa-part8.mp4",
       "date": "2026-11-27",
       "time_ist": "20:00",
-      "status": "scheduled",
+      "status": "posted",
       "fb_video_id": "1095645183436411",
       "voice": "Gregory Grumble (API, stability 0.5, similarity 0.56)",
       "style": "painted (engine)",
@@ -288,7 +288,13 @@
       "pin_title": "Prophet Musa (AS) Part 8: The Sea Splits",
       "pin_description": "Pharaoh's army behind them, the sea in front. Then the sea split in two. A night escape, a cry of fear, and a staff that parted the sea. Surah Ash-Shu'ara 26:52-68, Surah Yunus 10:90-92. #ProphetMusa #StoriesOfTheProphets #QuranStories #Islam",
       "wa_text": "Pharaoh's army behind them, the sea in front. Then the sea split in two 🌊\n\nProphet Musa (AS), Part 8: The Sea Splits\n📖 Surah Ash-Shu'ara 26:52-68, Surah Yunus 10:90-92",
-      "note": "Made by the daily run 2026-11-26; FB scheduled natively; IG/Story/YT/Pinterest/Telegram LIVE by the 8 PM poster."
+      "note": "Made by the daily run 2026-11-26; FB scheduled natively; IG/Story/YT/Pinterest/Telegram LIVE by the 8 PM poster.",
+      "yt": "posted",
+      "ig_media_id": "18080457332457624",
+      "ig_permalink": "https://www.instagram.com/reel/DgP6PNRh3j2/",
+      "yt_video_id": "PIbmUI3H84g",
+      "pin_id": "228135537374043522",
+      "ig_story": "failed (IG publish Fatal code -1, twice)"
     },
     {
       "n": 10,
