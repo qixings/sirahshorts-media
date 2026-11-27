@@ -1,0 +1,120 @@
+{
+ "title": "Musa, Part 10: Three Strange Acts",
+ "fact_notes": [
+  "Quran 18:71-78 (Saheeh International via api.quran.com, checked 2026-11-28)",
+  "Line 1: summary of 18:71, 18:74, 18:77; 2-3: 18:71; 4: 18:72; 5: 18:73; 6-7: 18:74; 8: 18:75; 9: 18:76; 10-11: 18:77; 12: 18:78; 13: teaser for 18:79-82 (Part 11).",
+  "Line 6 (18:74) kept short and non-graphic per rule 3; the boy is never drawn, shown only by a small ball left on the sand under a dimmed sky.",
+  "The servant of Allah is shown only as the green cloak (as in Part 9). The name Khidr (Sahih al-Bukhari 122) is not spoken in this part."
+ ],
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "Three times, Musa saw him do something that made no sense.",
+     "spoken": "Three times, Musa saw him do something that made no sense.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 2,
+     "text": "They boarded a ship, and the man tore a hole in it.",
+     "spoken": "They boarded a ship, and the man tore a hole in it.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 3,
+     "text": "Musa said: \"Did you tear it to drown its people? A grave thing!\"",
+     "spoken": "Musa said: \"Did you tear it to drown its people? A grave thing!\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 4,
+     "text": "He said: \"Did I not say you would never have patience with me?\"",
+     "spoken": "He said: \"Did I not say you would never have patience with me?\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 5,
+     "text": "\"Do not blame me for what I forgot,\" said Musa.",
+     "spoken": "\"Do not blame me for what I forgot,\" said Musa.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 6,
+     "text": "Then they met a boy, and the man took his life.",
+     "spoken": "Then they met a boy, and the man took his life.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 7,
+     "text": "Musa cried: \"A pure soul, who took no life? This is terrible!\"",
+     "spoken": "Musa cried: \"A pure soul, who took no life? This is terrible!\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 8,
+     "text": "\"Did I not tell you, you would never have patience?\"",
+     "spoken": "\"Did I not tell you, you would never have patience?\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 9,
+     "text": "\"If I ask again,\" said Musa, \"do not keep me with you.\"",
+     "spoken": "\"If I ask again,\" said Musa, \"do not keep me with you.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 10,
+     "text": "In a town that refused them food, the man rebuilt a falling wall.",
+     "spoken": "In a town that refused them food, the man rebuilt a falling wall.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 11,
+     "text": "Musa said: \"You could have taken payment for it.\"",
+     "spoken": "Musa said: \"You could have taken payment for it.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 12,
+     "text": "He said: \"This is where we part. Now I will tell you why.\"",
+     "spoken": "He said: \"This is where we part. Now I will tell you why.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 13,
+     "text": "What wisdom was hidden behind all three? Follow for Part 11.",
+     "spoken": "What wisdom was hidden behind all three? Follow for Part eleven.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ]
+}
