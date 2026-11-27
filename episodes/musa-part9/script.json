@@ -1,0 +1,112 @@
+{
+ "title": "Musa, Part 9: The Journey to Khidr",
+ "fact_notes": [
+  "Quran 18:60-70 (Saheeh International via api.quran.com, checked 2026-11-27)",
+  "Line 1: 18:64-65; 2: 18:60; 3: 18:61, 18:63 (the rock); 4: 18:61, 18:63; 5: 18:62-63; 6: 18:64; 7: 18:65; 8: 18:66; 9: 18:67-68; 10: 18:69; 11: 18:70; 12: teaser for 18:71-78 (Part 10).",
+  "The name Khidr is from Sahih al-Bukhari 122 (hadith, verified via the jsDelivr hadith-api); it is used only in the title and end card, never said to be in the Qur'an. The young man's name (Yusha) and the reason for the journey (from the same hadith) are left out.",
+  "The young man is never drawn: shown only by a second staff and a basket."
+ ],
+ "takes": [
+  {
+   "take": "T01_all",
+   "lines": [
+    {
+     "id": 1,
+     "text": "A lost fish would lead Musa to a man taught knowledge by Allah.",
+     "spoken": "A lost fish would lead Musa to a man taught knowledge by Allah.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 2,
+     "text": "Musa told his young companion: \"I will not stop until I reach where the two seas meet.\"",
+     "spoken": "Musa told his young companion: \"I will not stop until I reach where the two seas meet.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 3,
+     "text": "There, they rested by a rock, and forgot their fish.",
+     "spoken": "There, they rested by a rock, and forgot their fish.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 4,
+     "text": "It slipped away into the sea, in an amazing way.",
+     "spoken": "It slipped away into the sea, in an amazing way.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 5,
+     "text": "Later, tired and hungry, the young man said: \"I forgot the fish at the rock!\"",
+     "spoken": "Later, tired and hungry, the young man said: \"I forgot the fish at the rock!\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 6,
+     "text": "Musa said: \"That is what we were seeking!\" So they went back on their tracks.",
+     "spoken": "Musa said: \"That is what we were seeking!\" So they went back on their tracks.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 7,
+     "text": "There they found a servant of Allah, given mercy and knowledge from Him.",
+     "spoken": "There they found a servant of Allah, given mercy and knowledge from Him.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 8,
+     "text": "Musa asked: \"May I follow you, so you teach me what you were taught?\"",
+     "spoken": "Musa asked: \"May I follow you, so you teach me what you were taught?\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.45
+    },
+    {
+     "id": 9,
+     "text": "He said: \"You will never have patience with what you do not fully know.\"",
+     "spoken": "He said: \"You will never have patience with what you do not fully know.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.5
+    },
+    {
+     "id": 10,
+     "text": "Musa said: \"If Allah wills, you will find me patient.\"",
+     "spoken": "Musa said: \"If Allah wills, you will find me patient.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.4
+    },
+    {
+     "id": 11,
+     "text": "\"Then ask me about nothing, until I explain it to you.\"",
+     "spoken": "\"Then ask me about nothing, until I explain it to you.\"",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.55
+    },
+    {
+     "id": 12,
+     "text": "But soon, Musa could not stay silent. Follow for Part 10.",
+     "spoken": "But soon, Musa could not stay silent. Follow for Part ten.",
+     "hero": "",
+     "typed": "",
+     "gap_after": 0.6
+    }
+   ]
+  }
+ ]
+}
