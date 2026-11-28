@@ -1249,6 +1249,86 @@
    "comments": 0,
    "shares": 0,
    "saved": 2
+  },
+  {
+   "date": "2026-11-28",
+   "time_ist": "11:30",
+   "ig_followers": 13,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part8",
+   "ig_media_id": "18080457332457624",
+   "views": 134,
+   "reach": 111,
+   "likes": 7,
+   "comments": 2,
+   "shares": 0,
+   "saved": 0,
+   "note": "second run of the day; YouTube quota exceeded"
+  },
+  {
+   "date": "2026-11-28",
+   "time_ist": "11:30",
+   "ig_followers": 13,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "special-man-allah-spoke-to",
+   "ig_media_id": "18033853583686159",
+   "views": 1243,
+   "reach": 1076,
+   "likes": 108,
+   "comments": 0,
+   "shares": 7,
+   "saved": 11,
+   "note": "second run of the day; YouTube quota exceeded"
+  },
+  {
+   "date": "2026-11-28",
+   "time_ist": "11:30",
+   "ig_followers": 13,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part7",
+   "ig_media_id": "17977826844159941",
+   "views": 267,
+   "reach": 252,
+   "likes": 4,
+   "comments": 0,
+   "shares": 0,
+   "saved": 2,
+   "note": "second run of the day; YouTube quota exceeded"
+  },
+  {
+   "date": "2026-11-28",
+   "time_ist": "11:30",
+   "ig_followers": 13,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part6",
+   "ig_media_id": "18111598376631386",
+   "views": 189,
+   "reach": 152,
+   "likes": 9,
+   "comments": 2,
+   "shares": 0,
+   "saved": 0,
+   "note": "second run of the day; YouTube quota exceeded"
+  },
+  {
+   "date": "2026-11-28",
+   "time_ist": "11:30",
+   "ig_followers": 13,
+   "yt_views": "unavailable",
+   "yt_subscribers": "unavailable",
+   "episode": "musa-part5",
+   "ig_media_id": "18124545386075952",
+   "views": 205,
+   "reach": 173,
+   "likes": 7,
+   "comments": 0,
+   "shares": 0,
+   "saved": 1,
+   "note": "second run of the day; YouTube quota exceeded"
   }
  ],
  "paused": false,
@@ -1436,6 +1516,10 @@
    {
     "date": "2026-11-28",
     "note": "Musa Part 10 made for 29 Nov. Special still due 30 Nov: The Palm Trunk That Cried (Bukhari 3583)."
+   },
+   {
+    "date": "2026-11-28",
+    "note": "11:30 run: 2 episodes already queued (Part 9 tonight, Part 10 on 29 Nov), no video made. Special still due 30 Nov: The Palm Trunk That Cried."
    }
   ]
  },
@@ -1478,7 +1562,7 @@
    "17950965426071652"
   ],
   "replied": 11,
-  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded). 2026-11-23: no new comments on IG/FB/YT (3 of 4 YT comment-thread calls returned 403 forbidden, 1 empty). 2026-11-24: 1 IG reply (Part 6 hearts); FB none new; YT Part 4/5 comment threads 403, Part 6 empty. 2026-11-25: 1 YT reply (Part 5 hearts); IG/FB none new. 2026-11-26: no new comments on IG/FB; YT comments for Part 7 none, Part 6 forbidden; YT stats quota exceeded. 2026-11-27: no new comments on IG/FB (special, Part 7); YT comment threads 403 forbidden; YT stats quota exceeded. 2026-11-28: 1 IG reply (Part 8 hearts); FB none new; YT reply to a heart comment on the special failed (quota exceeded), left unseen to retry; Part 7 YT comments 403."
+  "note": "2026-11-20: FB reply failed (#3 page access token needed for comments via API); FB comment marked seen. 2026-11-21: 5 replies (2 IG, 3 YT); FB reply failed again (page token), FB comment marked seen; YT spam comment ignored. 2026-11-22: 1 IG reply (Part 4); FB comments read with Page token, none new; YT skipped (quota exceeded). 2026-11-23: no new comments on IG/FB/YT (3 of 4 YT comment-thread calls returned 403 forbidden, 1 empty). 2026-11-24: 1 IG reply (Part 6 hearts); FB none new; YT Part 4/5 comment threads 403, Part 6 empty. 2026-11-25: 1 YT reply (Part 5 hearts); IG/FB none new. 2026-11-26: no new comments on IG/FB; YT comments for Part 7 none, Part 6 forbidden; YT stats quota exceeded. 2026-11-27: no new comments on IG/FB (special, Part 7); YT comment threads 403 forbidden; YT stats quota exceeded. 2026-11-28: 1 IG reply (Part 8 hearts); FB none new; YT reply to a heart comment on the special failed (quota exceeded), left unseen to retry; Part 7 YT comments 403. 2026-11-28 11:30 run: no new IG/FB comments; YT reply to the special heart comment failed again (quota exceeded), left unseen to retry; Part 8 YT comments 403."
  },
  "office": {
   "artifact_slug": "6e86d0a9-1391-41b0-aa5a-27e3f682bd8f",
