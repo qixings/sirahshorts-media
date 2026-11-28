@@ -307,7 +307,7 @@
    "video": "videos/musa-part9.mp4",
    "date": "2026-11-28",
    "time_ist": "20:00",
-   "status": "scheduled",
+   "status": "posted",
    "fb_video_id": "1184542037251005",
    "voice": "Gregory Grumble (API, stability 0.5, similarity 0.56)",
    "style": "painted (engine)",
@@ -331,7 +331,13 @@
    "pin_description": "A lost fish led Musa to a man taught knowledge by Allah. A journey to where two seas meet, a fish that slipped away, and a teacher who warned him about patience. Surah Al-Kahf 18:60-70. #ProphetMusa #StoriesOfTheProphets #QuranStories #Islam",
    "wa_text": "A lost fish led Musa to a man taught knowledge by Allah 🐟\n\nProphet Musa (AS), Part 9: The Journey to Khidr\n📖 Surah Al-Kahf 18:60-70",
    "fact_notes": "Name Khidr from Sahih al-Bukhari 122, used only in the title and end card.",
-   "note": "Made by the daily run 2026-11-27; FB scheduled natively; IG/Story/YT/Pinterest/Telegram LIVE by the 8 PM poster."
+   "note": "Made by the daily run 2026-11-27; FB scheduled natively; IG/Story/YT/Pinterest/Telegram LIVE by the 8 PM poster.",
+   "yt": "posted",
+   "ig_media_id": "18110806382205488",
+   "ig_permalink": "https://www.instagram.com/reel/DgSfAD6B4FI/",
+   "yt_video_id": "ZFafH07T4Ms",
+   "pin_id": "228135537374077806",
+   "ig_story": "failed (IG publish Fatal code -1)"
   },
   {
    "n": 11,
